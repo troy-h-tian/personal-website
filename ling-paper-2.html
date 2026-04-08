@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grammar &amp; Lexicon of Crystal's Speech — Troy Tian</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Phrase structure tree */
+    .tree {
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem 2rem;
+      overflow-x: auto;
+      color: #ccc;
+      margin: 1.5rem 0;
+    }
+    .tree .node { color: var(--accent); font-weight: bold; }
+    .tree .leaf { color: #e8e8e8; }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">Troy <span>Tian</span></div>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="writing.html" class="active">Writing</a>
+  </nav>
+</header>
+
+<main class="container">
+  <a href="writing.html" class="back-link">← Writing</a>
+
+  <div class="essay-header">
+    <div class="card-meta">Linguistics 1 &nbsp;·&nbsp; UCLA &nbsp;·&nbsp; December 2025</div>
+    <h1>The Grammar and Lexicon of the English Speech of Oddly Specific Crystal</h1>
+    <p class="essay-desc">
+      A follow-up sociolinguistic analysis of YouTuber Oddly Specific Crystal's speech —
+      examining her use of discourse particles as syntactic markers of informality and
+      relatability, a phrase structure analysis, and the rhetorical functions of profanity across
+      different video formats.
+    </p>
+  </div>
+
+  <div class="essay-body">
+    <h2>Introduction</h2>
+    <p>
+      This paper will discuss the unique features of the English speech of YouTuber Oddly Specific
+      Crystal, whose full name could not be found after reasonable research. My linguistic background
+      includes several languages, primarily Standard American English and Mandarin Chinese. Although
+      I grew up in Rhode Island and around some number of Rhode Island English speakers, my parents
+      were learners of Standard American English, and thus raised me in a bilingual household of
+      both that dialect and their native Standard Mandarin.
+    </p>
+
+    <p>
+      Similarly to me, Crystal is ethnically Chinese and seems to primarily speak both English and
+      possibly Chinese. An instructional but also comedic content creator known for her brand of
+      "oddly specific" advice, she was raised in Hong Kong and attended university in London, still
+      living there today. Crystal effectively only makes videos in English, and the extent of her
+      fluency in any form of Chinese is unknown; neither does she appear to naturally speak any form
+      of Hong Kong or British English. However, her speech still differs in significant and
+      interesting ways from the Standard North American English that I was taught to speak, namely
+      in her frequent usage of discourse particles as well as that of sometimes excessive profanity
+      in both natural and performative capacities. This paper will analyse the occurrences and
+      rhetorical functions within Crystal's speech of these two phenomena, and deconstruct a simple
+      utterance of hers in a phrase structure diagram.
+    </p>
+
+    <h2>Grammatical Features: Discourse Particles</h2>
+    <p>
+      Crystal has an apparent tendency to append discourse particles to many (if not the majority
+      of) her sentences, in particular the word "right" in such a manner that it transforms factual
+      statements into inquiring confirmations of understanding. As a distinctive marker of informal
+      speech, this syntactic phenomenon is not characteristic of Standard North American English as
+      used in formal contexts and taught in academic settings; it is instead an
+      intentionally-preserved feature of her broader style of speech delivery.
+    </p>
+
+    <p>
+      For example, in a video discussing her journey into acceptance of her appearance, she says
+      that "I still don't get, like, a lot of attention, but, like, I get, like, a normal amount,
+      right?" Along with her very frequent usage of another discourse particle, "like," she ends her
+      sentence with the question tag "right?" as if having a casual conversation. Similarly, in the
+      same video, Crystal states (or more technically asks) that "I grew up in Asia, right?" Clearly,
+      she is not literally asking the viewer whether she did or did not grow up in Asia; because her
+      content consists of prerecorded videos, she does not even have the capacity to speak directly
+      to the viewer during them.
+    </p>
+
+    <p>
+      Rather, as a YouTuber whose particular platform is built on colloquial delivery and discussions
+      of largely mundane topics, her usage of "right" as a question tag — alongside that of other
+      informal discourse particles — serves the rhetorical purpose of establishing a familiarity
+      between herself and her viewers. Just as her advice is oddly specific, her conveyance of said
+      advice intentionally mirrors everyday conversation so as to seem friendly and easily understood,
+      enhancing relatability and ultimately the audience's enjoyment of her content.
+    </p>
+
+    <h2>Phrase Structure</h2>
+    <p>
+      The following sentence is drawn from a video in which Crystal recounts ending up in the
+      emergency room (correcting herself from the British English "A&amp;E"):
+    </p>
+
+    <blockquote>"I ended up in the emergency room."</blockquote>
+
+    <p>
+      The phrase structure of this sentence is as follows. The sentence (S) branches into a noun
+      phrase (NP) and a verb phrase (VP). The NP consists of a single noun (N): <em>I</em>. The VP
+      branches into a nested VP and a prepositional phrase (PP). The nested VP branches into a verb
+      (V) <em>ended</em> and a particle <em>up</em>, forming the phrasal verb "ended up." The PP
+      consists of a preposition (P) <em>in</em> and a noun phrase (NP), which itself branches into a
+      determiner (D) <em>the</em> and a nominal (N̄) which further branches into a modifier noun
+      <em>emergency</em> and a head noun <em>room</em>.
+    </p>
+
+    <div class="tree">
+<pre>
+              <span class="node">S</span>
+            /   \
+          <span class="node">NP</span>     <span class="node">VP</span>
+          |    /    \
+          <span class="node">N</span>  <span class="node">VP</span>      <span class="node">PP</span>
+          |   |    /      \
+        <span class="leaf">I</span>   <span class="node">V</span>   <span class="node">P</span>       <span class="node">NP</span>
+            / \  |      /     \
+         <span class="leaf">ended</span> <span class="leaf">up</span> <span class="leaf">in</span>   <span class="node">D</span>       <span class="node">N̄</span>
+                       |      /    \
+                      <span class="leaf">the</span>  <span class="node">N</span>       <span class="node">N</span>
+                           |       |
+                       <span class="leaf">emergency</span>  <span class="leaf">room</span>
+</pre>
+    </div>
+
+    <h2>Profane and Abusive Language</h2>
+    <p>
+      Crystal's content ranges from the more formal, such as academic and career advice, to the more
+      informal, such as "storytime"-style videos where she recounts various personal experiences. As
+      such, her usage of profanity in any given video naturally varies massively depending on roughly
+      to which category said video belongs; rhetorically, it serves to strengthen relatability and
+      function as a comedic and commonly-understood source of emphasis where used. It is worth noting
+      that Crystal manually censors most occurrences of any word that could be construed as profane
+      or explicit, as YouTubers are held to certain standards regarding cleanliness of language in
+      order to promote and monetize their content. YouTube states that "[e]xplicit content that
+      violates this policy could result in age restriction, content removal, or a strike" including
+      "use of excessive profanity in the content."
+    </p>
+
+    <p>
+      Thus, her content exhibits an interesting phenomenon of self-censorship whereby it is stringent
+      enough not to violate YouTube policy but preserves enough implication and context for viewers
+      to still enjoy the full impact of whatever profanity. For instance, Crystal states in a
+      "storytime" about why she quit her corporate job that "I'm one of those people that likes to
+      go through life fully sober, like, full rawdogging, no substances, et cetera…" The profanity,
+      in this case being the word "rawdogging," is a derivative form of a slang term whose original
+      meaning was "to have sex without a condom" (Merriam-Webster 2025). Although not necessarily
+      regarded as among the most profane terms, Crystal still chooses to censor it for its sexually
+      explicit etymology.
+    </p>
+
+    <p>
+      In another, more straightforward example, Crystal jokes to her audience that "again, this is
+      pretty fucking bad, right? Like, if someone saw you doing this shit, they would probably start
+      saying, like, 'you're crashing out.'" Being among the most common and most profane words
+      common to all dialects of English, Crystal's usages of "fuck" (sexually explicit) and "shit"
+      (explicit by way of association with a bodily function) for colloquial emphasis are not at all
+      unexpected.
+    </p>
+
+    <p>
+      A particularly interesting case is that of her video <em>How To Get Them To Fall In Love With
+      You</em>, where she uses a particularly high volume of profanity — even higher than other
+      videos featuring an informal presentation and speech style. She at one point asks her viewers:
+      "how the fuck would you know? Okay, how the fuck would you know? I'm Chinese! Are you gonna
+      dispute me, or, like, what Sun Tzu said in the comments? I'm sure the optics will look fucking
+      great for you, okay? I didn't fucking think so!" She later admits the video is entirely
+      satirical. Thus, her repeated and overt use of the highly profane F-word can be explained by
+      its specific rhetorical function: as the optimal emphatic expletive to be heavily featured in a
+      fully scripted and performative comedic tirade. It is still fascinating to observe her varying
+      attitudes towards and usages of explicit language across each of her works.
+    </p>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Troy Tian &nbsp;·&nbsp; UCLA
+</footer>
+
+</body>
+</html>
