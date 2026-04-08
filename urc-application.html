@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algorithmic Monocultures — Troy Tian</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">Troy <span>Tian</span></div>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="writing.html" class="active">Writing</a>
+  </nav>
+</header>
+
+<main class="container">
+  <a href="writing.html" class="back-link">← Writing</a>
+
+  <div class="essay-header">
+    <div class="card-meta">URC Sciences Application &nbsp;·&nbsp; 2026</div>
+    <h1>The Cascading Epistemological Risk of Algorithmic Monocultures in LLM Political Framing</h1>
+    <p class="essay-desc">
+      A research proposal examining whether LLM alignment techniques systematically degrade
+      epistemic diversity — and what that means for democratic discourse at scale.
+    </p>
+  </div>
+
+  <div class="essay-body">
+    <h2>Motivation &amp; Research Question</h2>
+    <p>
+      Large Language Models are rapidly becoming a primary epistemic bottleneck in public consumption
+      of information, with audiences ranging from median voters to world military, political, and
+      strategic leaders. They heavily mediate access to sociopolitical issues, acting as a biased
+      single point of failure for democratic discourse. Although progress has been made in auditing
+      bias on explicit demographic features, algorithms provably fail to output high-fidelity
+      representations of their source material, specifically when tasked to summarise a news article
+      on a politically contentious topic.
+    </p>
+
+    <p>
+      Recent work has shown that LLMs consistently but non-uniformly neutralise the lean of
+      moderately partisan articles (Savgira et al., 2026). Thus, the framing of topics as well as
+      the alignment techniques used to enforce neutrality exhibit a cascading spillover from external
+      ideological biases (Smith &amp; Doe, 2025), enforcing an algorithmic monoculture. The central
+      question: <em>to what extent do current LLM alignment techniques, specifically those enforcing
+      political "neutrality," systematically degrade epistemic diversity?</em>
+    </p>
+
+    <p>
+      We hypothesise that the fidelity of LLM summaries' representations of source material is
+      sacrificed due to biases within training corpora and techniques, driving cascading
+      representational collapses in a pursuit of neutrality which is itself defined by established
+      narratives (Bang et al., 2024; Savgira et al., 2026).
+    </p>
+
+    <h2>Research Design</h2>
+    <p>
+      To test this, we plan to construct a rigorous adversarial prompt dataset covering 12 contentious
+      vectors (e.g. nuclear armament, climate change, military spending) with source material from 5
+      divergent U.S. news-media ecosystems. We plan to engineer a high-throughput parallelised data
+      pipeline in Python to efficiently interface with models at scale, either through proprietary APIs
+      or local deployments of open-source models using PyTorch.
+    </p>
+
+    <p>
+      Once models generate summaries, text will be analysed using popular interpretability and
+      fairness tools such as LIME or SHAP. Using these tools, we will evaluate along a range of
+      framing indicators, running sentiment analyses relating to social and ideological biases and
+      extracting vectors/circuits which trigger neutralisation tendencies (Bang et al., 2024; Smith
+      &amp; Doe, 2025). We will then employ a latent variable model to decompose the generated text
+      into said framing metrics, specifically tracking whether epistemic homogenisation interventions
+      correlate with variance in quantitative fairness.
+    </p>
+
+    <h2>Significance</h2>
+    <p>
+      Epistemic disempowerment is a serious system-level issue: mis- and disinformation presently
+      stifle mass-life-saving policy efforts on issues like global health, nuclear energy, and foreign
+      aid. By quantifying exactly how and where alignment mechanisms create bias, this project lays
+      the empirical groundwork to design safer alignment paradigms. Successfully mapping these
+      vulnerabilities will allow developers and policymakers to shift away from brittle "neutrality"
+      targets toward frameworks that mathematically preserve representational fidelity, thereby
+      mitigating the risk of a hegemonic, globally deployed algorithmic monoculture overwriting
+      democratic discourse.
+    </p>
+
+    <h2>Key Uncertainties &amp; Mitigations</h2>
+    <p>
+      My primary uncertainty lies in the operationalization of "neutrality" and "bias," as these are
+      inherently intersubjective — the importance of truth versus fidelity (is a factual summary better
+      than a faithful one?) is an open question requiring analysis from several angles. There is also a
+      risk that interpretability tools (LIME/SHAP) and the latent variable model might capture
+      superficial stylistic variations rather than genuine ideological homogenisation.
+    </p>
+
+    <p>
+      Furthermore, testing proprietary APIs introduces the risk of silent model updates during the
+      10-week evaluation window, which could disrupt longitudinal data consistency. I plan to mitigate
+      this by anchoring a significant portion of the pipeline on local, version-locked open-weight
+      models via PyTorch; for more general questions about the basic assumptions of the experiment, I
+      will consult with peers and mentors.
+    </p>
+
+    <h2>Works Cited</h2>
+    <p>
+      Bang, Yejin, et al. (2024). "Measuring political bias in large language models: What is said
+      and how it is said." <em>Proceedings of the 62nd Annual Meeting of the Association for
+      Computational Linguistics.</em>
+    </p>
+    <p>
+      Savgira, P., et al. (2026). "What stays and what goes: Auditing the impact of LLM summarization
+      on news partisanship." <em>CHI: Late Breaking Work 2026.</em>
+    </p>
+    <p>
+      Smith, J., &amp; Doe, A. (2025). "Bias spillover in language models: A review of political
+      alignment, regional fragility, and multi-axis risks." <em>Proceedings of the 2025 ACM Conference
+      on Fairness, Accountability, and Transparency.</em>
+    </p>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Troy Tian &nbsp;·&nbsp; UCLA
+</footer>
+
+</body>
+</html>

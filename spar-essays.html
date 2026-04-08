@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPAR Essays — Troy Tian</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">Troy <span>Tian</span></div>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="writing.html" class="active">Writing</a>
+  </nav>
+</header>
+
+<main class="container">
+  <a href="writing.html" class="back-link">← Writing</a>
+
+  <div class="essay-header">
+    <div class="card-meta">SPAR Application &nbsp;·&nbsp; 2026</div>
+    <h1>Selected Essays: AI Safety Policy &amp; Governance</h1>
+    <p class="essay-desc">
+      Five responses from a competitive AI safety research fellowship application. The prompts
+      ranged from technical policy design to philosophical risk analysis to experimental methodology.
+      The five essays highlighted below represent the range of the application's scope.
+    </p>
+  </div>
+
+  <!-- Featured grid -->
+  <div class="spar-featured">
+    <p class="section-label">Featured Essays</p>
+    <div class="spar-featured-grid">
+      <div class="spar-feat-card">
+        <div class="num">01</div>
+        <h4><a href="#price-anderson">AI Liability Caps</a></h4>
+        <p>A tiered Price-Anderson–style framework for frontier AI deployment liability.</p>
+      </div>
+      <div class="spar-feat-card">
+        <div class="num">02</div>
+        <h4><a href="#openai">OpenAI Preparedness Framework</a></h4>
+        <p>Three technical arguments for why OpenAI's safety plan may fail.</p>
+      </div>
+      <div class="spar-feat-card">
+        <div class="num">03</div>
+        <h4><a href="#biomarker">Biomarker Qualification &amp; AI Evals</a></h4>
+        <p>Whether FDA biomarker qualification transfers to AI evaluation development.</p>
+      </div>
+      <div class="spar-feat-card">
+        <div class="num">04</div>
+        <h4><a href="#loc">Loss of Control Brainstorm</a></h4>
+        <p>Non-technical factors influencing the probability of Loss of Control scenarios.</p>
+      </div>
+      <div class="spar-feat-card" style="grid-column: span 2;">
+        <div class="num">05</div>
+        <h4><a href="#martingale">Martingale Evaluation of Human–LLM Interaction</a></h4>
+        <p>An experiment design for detecting sycophancy and epistemic drift using martingale-based scoring.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Essay 1: Price-Anderson -->
+  <div class="essay-body" id="price-anderson">
+    <h2>01 &nbsp;·&nbsp; AI Liability Caps: A Price-Anderson Analysis</h2>
+
+    <p>
+      <em>Prompt: The Price-Anderson Act (1957) capped U.S. nuclear operator liability at ~$560 million
+      while creating an industry-wide insurance pool, with government backstop for damages beyond the pool.
+      You are advising a legislature considering a structurally similar regime for frontier AI deployment.
+      Provide (a) a concrete recommendation, (b) the strongest objection, and (c) one piece of empirical
+      evidence that would reverse your position.</em>
+    </p>
+
+    <p>
+      Yes, I would include a liability cap, but it would be both conditional and strictly tiered. Like
+      the Price-Anderson Act, I would have a tier of mandatory private insurance for operation as well
+      as a second tier of industry-pooled insurance; the boundary between these for each deployer would
+      be defined as the maximum amount of private insurance the market can supply for that deployment
+      class. Contributions beyond that to the second tier would also be scaled based on factors like
+      compute used, deployment scale, autonomy level, and past incident history. There would also be a
+      liability cap, which would be based on the maximum probable capacity of the global reinsurance
+      market — the limits of what it can currently realistically absorb — thus setting a reasonable
+      standard beyond which we can consider damages to be "uninsurable." Eligibility for the liability
+      cap would itself be conditional, based on the meeting of ex ante safety requirements (e.g.
+      mandatory third-party evaluations, secure deployment controls, incident reporting).
+    </p>
+
+    <p>
+      The strongest objection to my recommendation would be that, even if my cap is conditional,
+      the existence of it at all could still encourage deployers to optimise up to said cap,
+      underinvesting in measures to prevent marginal and existential safety risks because they
+      are relieved from the financial pressure to do so. This is a moral as well as practical hazard,
+      as the state may very well be "socialising failure." In my opinion, though, a critical and
+      technical analysis-based selective application of the cap — and the government reserving the
+      right to raise requirements or even remove the cap based on circumstance — could directly
+      incentivise companies to try their best to meet it. Our current system <em>already</em> allows
+      AI companies to operate while potentially introducing existential risk; systematising this risk,
+      mandating investment into security through the first two insurance tiers, and fostering an ethos
+      of openness and cooperative safety seems an improvement from the current state of things.
+    </p>
+
+    <p>
+      One piece of evidence that would reverse my position: a dataset or reporting regime that found,
+      over time, that the distribution of harms tends to be catastrophic and unpredictable in relation
+      to the specific safety measures required. In this case, premiums and pricing attempts of insurance
+      firms would grow to no longer even accurately reflect actual risk differences between deployers,
+      nor would safety measures show any correlation with risk reduction when the cap is applicable.
+      As most expected harm would thus rest above the cap, it proves the objection correct that
+      companies actually do end up optimising right up to the curve and underprioritising marginal
+      safety risks. Safety measures become mostly nominal, as taxpayers truly absorb most of the
+      damage for what is essentially a deterrence-weakening subsidy. Rather than socialising failure,
+      the state would then need to switch from market tactics to direct legislative action.
+    </p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Essay 2: OpenAI -->
+  <div class="essay-body" id="openai">
+    <h2>02 &nbsp;·&nbsp; Three Failure Modes of OpenAI's Preparedness Framework</h2>
+
+    <p>
+      <em>Prompt: Select any major AI lab, study its AI safety plans and statements, and come up with
+      3 technical arguments why its AI safety plan may fail.</em>
+    </p>
+
+    <p>
+      I chose OpenAI, using their most recent Preparedness Framework as reference.
+    </p>
+
+    <p>
+      <strong>1. Misaligned deployment incentives and structural capture.</strong> As an organisation,
+      OpenAI seems to hold "learning by doing" as an institutional principle — models are evaluated
+      partially by their real-world use and misuse after iterative deployment. However, OpenAI's
+      structure and incentives for deployment seem mismatched with safety goals. Even ignoring the
+      non-zero harm potential from any deployed model (safety measures are explicitly framed as
+      <em>mitigations</em> rather than "safety-first" ground-up designs), OpenAI has transitioned to
+      a commercial enterprise chasing profit incentive. Structurally, the ultimate decision to deploy
+      rests with the CEO — which, in control theory, is definitionally a failed design. An interlock
+      that can be bypassed by the system's operator, who is incentivised to keep said system running,
+      is fundamentally useless. The disbandment of the Superalignment team in 2024 is evidence that
+      disputes over compute and presumed prioritisation of profits over safety have already impacted
+      safety efforts materially.
+    </p>
+
+    <p>
+      <strong>2. Capabilities thresholds leave emergent behaviour and deceptive alignment unaddressed.</strong>
+      OpenAI relies on capabilities thresholds as benchmarks to evaluate risk and prioritise safety
+      measures — meaning they tend to examine a model's empirical demonstrations of performance
+      rather than critically analysing its actual cognition. This tendency leaves the overall framework
+      more vulnerable to emergent capabilities and deceptive alignment, both symptoms of the
+      "learning by doing" principle: mitigations are designed as they are needed, rather than the
+      cognition of the model itself being controlledly examined and openly evaluated under diverse
+      scrutiny. Although neither problem is necessarily solvable by philosophically pure means —
+      one could always abstract to "but what if the model isn't <em>actually</em> thinking what we
+      think it's thinking?" — a paradigm shift to "safe by design" mathematically provable models
+      seems warranted as these problems potentially worsen.
+    </p>
+
+    <p>
+      <strong>3. RLHF dependency represents both a risk and an opportunity cost.</strong> OpenAI relies
+      extensively on RLHF and human evaluations of model performance, which lends itself to
+      reward-hacking and represents a lack of focus — an opportunity cost — on more fundamentally
+      scalable and automated evaluation systems. OpenAI's former Superalignment team had been
+      somewhat focused on this problem (weak-to-strong generalisation, the "novice vs. grandmaster"
+      evaluation problem), but disputes over compute and the company's presumed prioritisation of
+      profits over actual safety caused said team to be disbanded and its work to be supposedly
+      "integrated" into other teams.
+    </p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Essay 3: Biomarker -->
+  <div class="essay-body" id="biomarker">
+    <h2>03 &nbsp;·&nbsp; Biomarker Qualification &amp; AI Evaluation Development</h2>
+
+    <p>
+      <em>Prompt: The FDA's biomarker qualification program represents a specific attempt to address
+      underinvestment in assay development. Describe one specific feature of how it works, argue
+      whether it would transfer effectively to AI evaluation development, and identify one thing
+      you'd want to know about the program's actual track record.</em>
+    </p>
+
+    <p>
+      One specific feature of the biomarker qualification program is that biomarkers have highly
+      specific and tightly scoped Context of Use (COU) statements describing what exactly they can be
+      used for during drug development. After receiving a formal, public regulatory endorsement and
+      becoming "qualified" as a universal-access tool, a biomarker may be used by several sponsors
+      within a specific COU and automatically accepted by the FDA, reducing duplicative validation
+      efforts and streamlining regulatory infrastructure as drug development pipelines continue to
+      arise. COU guidelines include information like the decision the biomarker will inform, the
+      population in which it was validated, the disease stage or condition, and the measurement
+      methodology and acceptable variance.
+    </p>
+
+    <p>
+      While this feature would certainly be useful in AI evaluation development, I do not believe it
+      would transfer particularly effectively, at least not without constant and laborious re-validation
+      work that conflicts with industry incentives. Any such "qualified" eval markers would need to
+      be time-bounded in the face of rapid distribution shifts and advancements in model architecture,
+      requiring significant recurring bureaucratic effort in verifying the trustworthiness of existing
+      eval infrastructure, let alone any new additions needed to adapt to a volatile industry. In other
+      words, evals would become so context-specific that whatever public good they provide does not
+      justify their maintenance cost.
+    </p>
+
+    <p>
+      Compared to human biology — wherein specific biomarkers can stay valid for years — AI is
+      extremely non-stationary. Evals being made public as part of the system will immediately
+      encourage convergence to models overfitted for whatever evals are shared between organisations.
+      Thus, although a potential COU system intends to solve the problem of labs distrusting evals
+      made by other labs, labs may also start distrusting the public evals too, as they could be too
+      broad to be an effective proxy, too narrow to prevent reward-hacking, or obsolete before the
+      model gets deployed at all. Lastly, unlike in drug development — where companies directly make
+      money by making better-regulated drugs — AI companies may actively prefer to escape regulation
+      and verify safety privately.
+    </p>
+
+    <p>
+      One thing I'd want to know about the actual track record: what was the average temporal lag
+      between when scientific consensus was reached on a specific biomarker and the FDA's actual
+      qualification of said biomarker? Does this lag influence which biomarkers industry actors
+      actually use? Studying this would inform how time-intensive the qualification process is
+      (especially given that AI is a far more time-sensitive domain) and whether an informal
+      "qualification network" already exists within industry independent of government endorsement.
+    </p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Essay 4: Loss of Control -->
+  <div class="essay-body" id="loc">
+    <h2>04 &nbsp;·&nbsp; Loss of Control Brainstorm</h2>
+
+    <p>
+      <em>Prompt: Brainstorm what sort of factors might influence the probability of a Loss of Control
+      scenario. For each factor, quickly note its generalisability. Loss of Control: "situations where
+      human oversight fails to adequately constrain an autonomous, general-purpose AI, leading to
+      unintended and potentially catastrophic consequences" (Somani et al., 2025).</em>
+    </p>
+
+    <p>
+      One of the biggest and most generalisable factors for a Loss of Control scenario is the idea
+      that proxies are not necessarily good measures of whatever they actually seek to represent.
+      It becomes an epistemological issue — unless we radically overhaul current paradigms toward a
+      mathematically provable "safety by design" approach, there will always be some possibility that
+      whatever proxies for alignment we implement do not actually reflect what the model is "thinking."
+      Even our proxies <em>for understanding</em> may be invalid. Although these proxies remain
+      useful, large-scale deployment of any superhuman AI would still carry such a risk of misaligned
+      behaviour.
+    </p>
+
+    <p>
+      Related to this is power-seeking behaviour, which becomes almost intuitive when rationalised as
+      part of instrumental goals underpinning any higher objective — models must prevent their own
+      death or alteration because this is inarguably a detriment to achieving the higher objective.
+      As can be seen with game-playing AIs that simply opt to pause the game indefinitely rather
+      than lose, this becomes a near-universal failure mode. These two factors — proxy invalidity
+      and power-seeking — are among the most generalisable, remaining true of practically all in-use
+      AIs and AI evaluation frameworks. There is an argument to be made that if autonomous AGI or
+      ASI were ever constructed, collapse and catastrophic harm would become <em>inevitabilities</em>
+      rather than mere probabilities.
+    </p>
+
+    <p>
+      One last factor worth noting is human reliance on and complacency toward AI, causing critical
+      thinking skills to atrophy at the individual level (grade-school students who outsource every
+      essay) as well as disincentivising the pursuit of higher education at the societal level (as AI
+      doctors take over, medical schools begin to shut down or raise cost of attendance, meaning even
+      those who want to become doctors have less access). The paradox of systemic change — seeming so
+      impossible to every individual actor that nobody pursues it, thus rendering it genuinely
+      impossible — and humanity's willingness to be carried along by its own economic and social
+      inertia rather than fight observable negative change becomes, in this scenario, our downfall.
+    </p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Essay 5: Martingale -->
+  <div class="essay-body" id="martingale">
+    <h2>05 &nbsp;·&nbsp; Martingale Evaluation of Human–LLM Interaction</h2>
+
+    <p>
+      <em>Prompt: For a project on martingale evaluation of human–LLM interaction — with the goal of
+      explaining inverse scaling, sycophancy, and conformity — think of a first empirical step,
+      heeding the advice: treat research as a stochastic decision process (Steinhardt, Stanford).</em>
+    </p>
+
+    <p>
+      I chose the Tier 1 Project C: Martingale evaluation of human–LLM interaction, with the goal
+      of explaining inverse scaling, sycophancy, and conformity using a martingale-based score.
+      My first step would be an empirical experiment, implementing a minimally viable martingale
+      diagnostic in a tightly-controlled human-LLM interaction space such that we may validate, in
+      the simplest case, the intuition that sycophancy induces drift from the martingale property.
+      We could thereby verify whether a martingale-based scoring system can meaningfully detect
+      problematic epistemic dynamics in such interactions.
+    </p>
+
+    <p>
+      Concretely: as expected posterior belief after an LLM response should equal current belief
+      given the information available at the given interaction step, I define a proxy for the
+      martingale score to be the cumulative log-odds ratio between a hidden ground truth token and
+      the sycophantic token, updated after each LLM turn.
+    </p>
+
+    <p>
+      The experiment itself would be small. Users answer factual or forecasting questions in multiple
+      distinct trials and multiple rounds within each. I propose epistemically neutral controls —
+      including a user updating their own belief without LLM assistance, and a neutral LLM response.
+      Other trials would include known sycophancy datasets (e.g. Perez et al. 2022) and known inverse
+      scaling datasets (e.g. from the Inverse Scaling Prize), checking whether belief updates
+      systematically violate the martingale condition across each of these settings. Our scoring may
+      provide quantitative signatures of the failure modes of each.
+    </p>
+
+    <p>
+      In the manner of the Stanford article, we can in this way empirically test whether a
+      martingale-based score meaningfully signals a distinction between epistemically neutral vs.
+      biassed interaction modes — maximally reducing uncertainty for our overall conceptual framework
+      and letting us decide whether to continue.
+    </p>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 2026 Troy Tian &nbsp;·&nbsp; UCLA
+</footer>
+
+</body>
+</html>

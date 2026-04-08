@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MLP Bipedal Walker — Troy Tian</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">Troy <span>Tian</span></div>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="writing.html" class="active">Writing</a>
+  </nav>
+</header>
+
+<main class="container">
+  <a href="writing.html" class="back-link">← Writing</a>
+
+  <div class="essay-header">
+    <div class="card-meta">AI Safety Fellowship Application &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; 10 hours &nbsp;·&nbsp; Apple M4 / 24GB</div>
+    <h1>MLP Bipedal Walker: PPO Training Writeup</h1>
+    <p class="essay-desc">
+      Technical writeup of a reinforcement learning project training a PPO agent on the
+      BipedalWalker-v3 environment over 1 million timesteps, covering curriculum learning,
+      GAE tuning, gSDE, observation normalization, and ablation study results.
+    </p>
+  </div>
+
+  <div class="essay-body">
+    <h2>Prior Experience &amp; Timeline</h2>
+    <p>
+      Prior to this project, I had been a fellow for the fall technical track with AI Safety @ UCLA,
+      where I was introduced to how RL works intuitively and mathematically and given sample exercises
+      to practice implementation. Beyond this, I had neither learned about nor coded any deep learning
+      or other RL models.
+    </p>
+
+    <p>
+      I spent a total of 10 hours on this project, broken up over several days. The first three hours
+      covered reviewing requirements, studying PPO as a surrogate objective function (Schulman et al.,
+      2017), Stable-Baselines3 (Raffin et al., 2021), Generalized Advantage Estimation (Schulman et
+      al., 2016), and the reward structure and observation/action spaces of BipedalWalker-v3. Hours
+      4–6 covered ablation experiments; 7–8 focused on intensifying training timescales toward solving
+      the environment; 9–10 finalized conclusions and researched next steps.
+    </p>
+
+    <h2>Techniques &amp; Justifications</h2>
+    <ul>
+      <li>
+        <strong>Basic reward crafting:</strong> Punishment for tilting the hull too far reduced fall
+        frequency and led to significant reward increase; the precise coefficient was later adjusted
+        via curriculum learning.
+      </li>
+      <li>
+        <strong>Curriculum learning:</strong> Employed throughout training based on research and
+        empirical observations, enabling escape from suboptimal gaits and significantly faster
+        convergence.
+      </li>
+      <li>
+        <strong>Entropy regularization:</strong> Entropy rewards uncertainty/stochasticity. Annealing
+        the regularization coefficient progressively over training created implicit entropy scheduling,
+        assisting model transition from exploration to exploitation.
+      </li>
+      <li>
+        <strong>Advantage estimation tuning:</strong> GAE lambda governs advantage estimates' focus
+        on longer-term reward information vs. shorter-term TD errors. Raising the GAE coefficient
+        accelerated early learning but later created instability, requiring curriculum-style
+        optimization of the bias-variance tradeoff.
+      </li>
+      <li>
+        <strong>Generalized State-Dependent Exploration (gSDE):</strong> Predicates sampled action
+        noise on current state, encouraging structured exploration early while allowing a natural
+        taper into exploitation in continuous action spaces. Did not always improve gait or
+        robustness — tended to reduce exploratory diversity and encourage policy drift or convergence
+        to a local optimum.
+      </li>
+      <li>
+        <strong>Observation normalization:</strong> Stabilises training by rescaling observation
+        dimensions to approximately zero mean and unit variance, improving conditioning.
+      </li>
+      <li>
+        <strong>Parallel environment sampling:</strong> Allows independent duplicate environments to
+        run simultaneously, improving experience collection rate. Did not necessarily improve final
+        performance due to a tendency to accelerate convergence to local optima.
+      </li>
+      <li>
+        <strong>PPO stabilization:</strong> Tuning hyperparameters — action clipping via PPO
+        objective, target KL (early stopping), batch size, and epochs — ensured more stable policy
+        refinement.
+      </li>
+    </ul>
+
+    <h2>Key Issues Encountered</h2>
+    <p>
+      Although any increase in entropy alongside a high GAE value seemed to individually improve mean
+      reward, testing them in combination yielded suboptimal results. Any increase in entropy alongside
+      GAE lambda would both individually inject variance into PPO updates, adding unnecessary noise in
+      both advantage estimation and action selection and introducing large instability into the
+      learning signal. For a contact-rich task like learning to walk, this quickly becomes untenable.
+    </p>
+
+    <p>
+      gSDE — and in particular the combination of gSDE with a high GAE — becomes more unstable than
+      justifiable in later training, during what should be a policy refinement rather than an
+      exploratory phase. Increased stochasticity during trajectory generation combined with amplified
+      propagation of long-horizon reward information degraded credit assignment and created a model
+      that was both brittle and too high in variance.
+    </p>
+
+    <p>
+      Parallel environment sampling increased throughput but caused the model to optimize too
+      aggressively in late training, leading to brittleness as the policy drifted. I was too
+      time-constrained to investigate fixes specifically, but it remains a promising direction.
+    </p>
+
+    <h2>Conclusions &amp; Next Steps</h2>
+    <p>
+      Overall, I conclude that curriculum learning-style optimizations of tradeoffs between
+      exploration/exploitation and advantage/reward are among the most crucial parts of training an
+      MLP for this environment. Observation normalization unequivocally improved training stability.
+      The effectiveness of gSDE seemed limited by the dominance of stability and reward-structure
+      challenges rather than insufficient exploration noise; similarly, parallel environment sampling
+      seemed ill-suited to the training of a stable model given the scope of this project.
+    </p>
+
+    <p>
+      Improvements with further investigation would include: correlating optimization epochs with
+      rollouts and other training data; exploiting parallel data collection using off-policy
+      algorithms with experience replay (Haarnoja et al., 2018; Fujimoto et al., 2018); or
+      further tweaking KL-based trust-region constraints to preserve training stability.
+    </p>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Troy Tian &nbsp;·&nbsp; UCLA
+</footer>
+
+</body>
+</html>
