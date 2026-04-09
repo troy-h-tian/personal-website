@@ -53,10 +53,35 @@
         <h4><a href="#loc">Loss of Control Brainstorm</a></h4>
         <p>Non-technical factors influencing the probability of Loss of Control scenarios.</p>
       </div>
-      <div class="spar-feat-card" style="grid-column: span 2;">
+      <div class="spar-feat-card">
         <div class="num">05</div>
         <h4><a href="#martingale">Martingale Evaluation of Human–LLM Interaction</a></h4>
         <p>An experiment design for detecting sycophancy and epistemic drift using martingale-based scoring.</p>
+      </div>
+      <div class="spar-feat-card">
+        <div class="num">06</div>
+        <h4><a href="#sl5">Flaws in SL5 Draft Control Specifications</a></h4>
+        <p>Four flaws in control specifications from historical drafts of the SL5 Standard.</p>
+      </div>
+      <div class="spar-feat-card">
+        <div class="num">07</div>
+        <h4><a href="#spillover">Capabilities Spillover: Automated Verifiers</a></h4>
+        <p>Automated verifier/critique methods as an underexamined spillover risk in AI safety research.</p>
+      </div>
+      <div class="spar-feat-card">
+        <div class="num">08</div>
+        <h4><a href="#ironwood">Google Ironwood: A Reader's Guide</a></h4>
+        <p>What Google's Ironwood announcement gets right, gets wrong, and leaves out.</p>
+      </div>
+      <div class="spar-feat-card">
+        <div class="num">09</div>
+        <h4><a href="#karma">Karma as Force, Not Variable</a></h4>
+        <p>A Buddhist reconciliation: karma as moral cause-and-effect, not numerical carry-over.</p>
+      </div>
+      <div class="spar-feat-card" style="grid-column: span 2;">
+        <div class="num">10</div>
+        <h4><a href="#fundamental-right">Fundamental Rights in the Age of AI</a></h4>
+        <p>Vague legislation, manufactured consent, and the case for enshrining AI epistemic rights.</p>
       </div>
     </div>
   </div>
@@ -321,6 +346,210 @@
       martingale-based score meaningfully signals a distinction between epistemically neutral vs.
       biassed interaction modes — maximally reducing uncertainty for our overall conceptual framework
       and letting us decide whether to continue.
+    </p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Essay 6: SL5 -->
+  <div class="essay-body" id="sl5">
+    <h2>06 &nbsp;·&nbsp; Flaws in SL5 Draft Control Specifications</h2>
+
+    <p>
+      <em>Prompt: The four control specifications below are taken from historical drafts of the SL5 Standard.
+      The Parameter Values or Supplemental Guidance sections may contain flaws, your task is to identify them.
+      "Flaw" is left intentionally open ended — anything that would undermine the Task Force's mission of
+      enabling AI labs to reach SL5. (50–400 words)</em>
+    </p>
+
+    <p>
+      In SI-7(15), the Parameter Value-mandated code authentication including execution tasks is stated in
+      the Supplemental Guidance to be "not yet available in commercial accelerators". Alternative controls
+      or criteria for what constitutes compliance must be specified, otherwise compliance is made impossible.
+    </p>
+
+    <p>
+      All code signing occurs on the Development Network, meaning it is a single point of failure. Without
+      air-gapped separation measures or other requirements for independent networks, attackers can skip
+      ingestion point scanning and then sign and transfer malicious code to all Internal Network systems
+      (which simply trust any valid signature) if the Development Network becomes compromised. Further,
+      the requirement to sign "task sequences" to protect against a compromised host is also flawed in
+      this regard, as the host would need to hold the signing keys for the system to function at any sort
+      of scale, but then this simply allows them to sign malicious sequences.
+    </p>
+
+    <p>
+      In SI-3, malware is conflated with adversarial inputs, falsely characterising the latter as "malicious
+      code" and causing a scope creep as there is no threshold criteria for what constitutes malware and
+      the necessary non-signature detection of novel adversarial examples has not yet been solved. This
+      could lead to compliance failures and resource black holes.
+    </p>
+
+    <p>
+      In SC-7(10), the control assumes "covered models are substantially larger than required outputs"
+      without evidence, which with new developments is increasingly false. Bandwidth caps are not synonymous
+      with information limits, meaning sophisticated exfiltration would still be possible.
+      Guidance suggests stripping "thinking tokens" or exporting "high-level experiment plans" outside
+      the enclave. This expands the trusted computing base, potentially allowing the creation of new
+      high-bandwidth semantic covert channels that bypass the hardware rate limits intended to prevent
+      exfiltration.
+    </p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Essay 7: Spillover -->
+  <div class="essay-body" id="spillover">
+    <h2>07 &nbsp;·&nbsp; Capabilities Spillover in AI Safety Research: Automated Verifiers</h2>
+
+    <p>
+      <em>Prompt: Think of one additional case of AI safety research which may lead or actually leads to
+      the spillover to capabilities not mentioned in the research proposal. Provide your estimates of how
+      relevant it is to pursue this research direction in your opinion — are the risks worth the gains or
+      not? Provide ideas on how the risks can be mitigated.</em>
+    </p>
+
+    <p>
+      One additional case of AI safety research not mentioned in the research proposal is automated
+      verifier/critique methods, which may increasingly see use given the rising prominence of projects
+      attempting to create "AI researchers" that conduct increasingly sophisticated experiments and
+      innovations. Although its primary motivation seems to be universally scalable (beyond-human)
+      supervision of AIs, the capabilities spillover from such an advancement is also clear: an agentic
+      AI capable of such feedback in an instrumental capacity could automate its own curriculum discovery
+      such that robustness and capabilities generality increase rapidly. Also, any system that can reliably
+      catch weaknesses and vulnerabilities in other AI systems could exploit said vulnerabilities wherever
+      it finds them if pursuing some nefarious ends, and even begin catching vulnerabilities in digital
+      infrastructure overall (e.g. in cybersecurity).
+    </p>
+
+    <p>
+      In my opinion, I think it is worthwhile to pursue this research direction, as at least some major
+      schools of thought in AI safety emphasise a need to somehow scale AI evaluation and robustness
+      fundamentally beyond what humans can supervise. I think the risks are worth the gains if said
+      research is conducted in tightly-controlled environments and closed systems, mirroring practices in
+      traditional cybersecurity, as well as being targeted as narrowly as possible to specific safety
+      properties like policy compliance and selective capability suppression. Other methods of mitigation
+      would include directly gatekeeping access to strong verifiers, publishing evaluation results rather
+      than details of methodologies for repurposing safety research, and requiring before-and-after
+      capabilities impact reporting for safety grants.
+    </p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Essay 8: Ironwood -->
+  <div class="essay-body" id="ironwood">
+    <h2>08 &nbsp;·&nbsp; Google Ironwood: A Reader's Guide</h2>
+
+    <p>
+      <em>Prompt: (30 min) Google recently announced their new TPU, Ironwood. Read the announcement post
+      with a skeptical eye. Then write up a summary of what readers need to know about the chip and any
+      ways in which the blog post presented information in a misleading way. I mainly care about the
+      content you write rather than the language — no need to write something verbose. So you're basically
+      writing a readers guide to that blog post, giving readers the summary and pointing to any places
+      where Google presented things in a misleading way. You are allowed to consult sources other than
+      the blog post.</em>
+    </p>
+
+    <p>
+      Ironwood is Google's newest (7th-generation) Tensor Processing Unit, the first designed specifically
+      for inference (as opposed to training) and meant to resolve contemporary demands and problems. It
+      boasts a claimed scale of 9,216 chips in a pod which can deliver 42.5 exaflops at FP8 precision
+      (its other version comes with 256). It reports greatly increased performance over previous TPU
+      iterations by Google in things like power efficiency, High Bandwidth Memory capacity, networking
+      with Inter-Chip Interconnect, and also extra features like SparseCore for processing large embeddings
+      and distributed computing with Google DeepMind's Pathways.
+    </p>
+
+    <p>
+      They, however, make a few contextless assertions, comparisons, and omissions that mislead readers
+      into believing an exaggerated version of Ironwood's performance and capacity.
+    </p>
+
+    <p>
+      Google markets Ironwood as marking a supposed "age of inference," as if inference is some sort of
+      replacement for or innovation away from training models, when in reality this is just a marketing
+      tactic. Although the TPU is of course quite optimal for inference, it can still do training, and
+      is no different from previous TPUs which have always done both.
+    </p>
+
+    <p>
+      Google claims that Ironwood outperforms El Capitan, the world's largest supercomputer, by 20x, but
+      they actually use different units that make the comparison meaningless (specifically, Ironwood's
+      exaflops were measured at a low FP8 precision while El Capitan's were measured at the FP64 double
+      precision standard specifically used for scientific computing).
+    </p>
+
+    <p>
+      Google cites several "peak" performance numbers, which tend to be theoretical and rely on internal
+      benchmarks rather than standardised benchmarks or figures from actual public deployments; for
+      example, the claim that it can scale to "hundreds of thousands of Ironwood chips."
+    </p>
+
+    <p>
+      Google cherry-picks several comparisons to older TPU generations to inflate the reader's sense of
+      the achievements and innovations of the model, whereas competitors like NVIDIA Blackwell achieve
+      similar performance by many metrics. These bear absolutely no mention in the article (especially
+      not given the intended effect of the "20x the world's largest supercomputer" comparison).
+    </p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Essay 9: Karma -->
+  <div class="essay-body" id="karma">
+    <h2>09 &nbsp;·&nbsp; Karma as Force, Not Variable</h2>
+
+    <p>
+      <em>Prompt: What is your most impressive theoretical or conceptual finding, if any? What's one
+      single most impressive detail about it? (&lt;100 words)</em>
+    </p>
+
+    <p>
+      As a Buddhist convert, I embrace karmic morality: if you're good now, your next life is better,
+      and vice versa. However, this seemingly contrasts Buddha's assertion that nothing is permanent;
+      recognition of our inherent transience enables detachment from material desires. But how can this
+      be, if karma accumulated in one life influences the next?
+    </p>
+
+    <p>
+      I've impressed myself in finding that one mustn't conceptualise karma as a floating-point variable,
+      but rather a fundamental force: moral cause-and-effect. Gravity isn't an "essence" of objects, but
+      characterises their falling; karma, similarly, is not numerical carry-over existing despite change.
+      It governs change; it <em>is</em> change.
+    </p>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Essay 10: Fundamental Right -->
+  <div class="essay-body" id="fundamental-right">
+    <h2>10 &nbsp;·&nbsp; Fundamental Rights in the Age of AI</h2>
+
+    <p>
+      <em>Prompt: What, according to you, are the key issues that a new fundamental right should be aimed
+      at mitigating? If not through fundamental rights, what other ways would you suggest tackling these
+      issues? I am keen to read your own thoughts. (200–250 words. You can use AI, but please be advised
+      that overrelying on it tends to yield generic answers.)</em>
+    </p>
+
+    <p>
+      I believe that the biggest issues a new fundamental right should be aimed at mitigating would be
+      vagueness in legislation and accountability during arbitrage as well as what I term the "manufactured
+      consent" issue. Firstly, one of the primary functions of an explicitly articulated fundamental right
+      would be to define a set of legal first-principles as scaffolding upon which future generations of
+      legislation and legal precedent may be built. Existing normative frameworks do prove insufficient
+      here in the sense that consumer protections and other laws which seek to institutionalise
+      responsibility for damages are short-sighted and would fail to concretely capture the consequences
+      of a technology so increasingly ubiquitous as AI. With a framework to point to when or even before
+      damages are incurred, perpetrators (hackers, engineers, or corporate upper management) are given a
+      crime to be prosecuted for, rather than a hodgepodge post-hoc profile of the consequences of their
+      actions. Further, as AI becomes increasingly integrated in and influential over people's actual
+      decisions and natural world models, concerns of manipulation of worldview become salient; like with
+      legacy and social media, companies may easily manufacture consent or other opinions among user
+      populations without necessarily explicitly violating "damages-oriented" laws. But by enshrining
+      truth and loyalty to principles as a fundamental right, this destructive phenomenon of epistemic
+      disempowerment becomes outright illegal and prosecutable.
     </p>
   </div>
 
