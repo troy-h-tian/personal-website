@@ -400,3 +400,34 @@ h2.page-title {
 }
 
 .essay-header .links-row { margin-top: 1rem; }
+
+/* ── Resume section ── */
+.resume-actions {
+  margin-bottom: 1rem;
+}
+
+.resume-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 0.8rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  transition: border-color 0.15s, color 0.15s;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.resume-download:hover {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+  text-decoration: none;
+}
+
+.resume-embed {
+  height: 900px;
+  border-radius: 6px;
+}
