@@ -15,8 +15,8 @@ html.dark-mode {
   --bg: #0f0f0f;
   --surface: #161616;
   --border: #2a2a2a;
-  --text: #e8e8e8;
-  --muted: #888;
+  --text: #ffffff;
+  --muted: #aaa;
   --tag-bg: #1e1e1e;
 }
 
@@ -61,21 +61,18 @@ nav { display: flex; gap: 1.75rem; align-items: center; }
 .theme-toggle {
   font-family: 'Helvetica Neue', sans-serif;
   background: transparent;
-  border: 1px solid var(--border);
+  border: none;
   color: var(--muted);
-  padding: 0.4rem 0.9rem;
-  border-radius: 4px;
+  padding: 0;
   cursor: pointer;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  transition: border-color 0.15s, color 0.15s;
-  margin-left: 1rem;
+  transition: color 0.15s;
 }
 
 .theme-toggle:hover {
   color: var(--text);
-  border-color: var(--accent-dim);
 }
 nav a { color: var(--muted); font-size: 0.875rem; font-family: 'Helvetica Neue', sans-serif; letter-spacing: 0.04em; text-transform: uppercase; }
 nav a:hover, nav a.active { color: var(--text); text-decoration: none; }
@@ -83,7 +80,7 @@ nav a:hover, nav a.active { color: var(--text); text-decoration: none; }
 .container {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: 3rem 2rem 2rem;
 }
 
 .container--no-top-pad { padding-top: 0; }
@@ -105,7 +102,7 @@ footer {
 
 /* ── Home page ── */
 .hero {
-  padding: 4rem 2rem 3rem;
+  padding: 4rem 2rem 2rem;
   max-width: var(--max-w);
   margin: 0 auto;
 }
@@ -129,7 +126,7 @@ footer {
 
 .hero .bio {
   font-size: 1.05rem;
-  color: #ccc;
+  color: var(--muted);
   max-width: 620px;
   margin-bottom: 2rem;
 }
@@ -298,7 +295,7 @@ h2.page-title {
 }
 
 .essay-header .essay-desc {
-  color: #bbb;
+  color: var(--muted);
   font-size: 1rem;
   max-width: 580px;
 }
@@ -311,7 +308,7 @@ h2.page-title {
 }
 
 .essay-body p {
-  color: #ccc;
+  color: var(--text);
   font-size: 0.975rem;
   margin-bottom: 1.25rem;
 }
@@ -326,7 +323,7 @@ h2.page-title {
 }
 
 .essay-body ul, .essay-body ol {
-  color: #ccc;
+  color: var(--text);
   font-size: 0.975rem;
   padding-left: 1.5rem;
   margin-bottom: 1.25rem;
@@ -350,7 +347,7 @@ h2.page-title {
 
 /* ── SPAR page featured grid ── */
 .spar-featured {
-  background: linear-gradient(135deg, #1a1610 0%, #161616 100%);
+  background: var(--surface);
   border: 1px solid var(--accent-dim);
   border-radius: 8px;
   padding: 2rem;
@@ -413,7 +410,7 @@ h2.page-title {
 .divider {
   border: none;
   border-top: 1px solid var(--border);
-  margin: 2rem 0;
+  margin: 0 0 2rem 0;
 }
 
 /* ── PDF embed ── */
