@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CBAI Application — Troy Tian</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">Troy <span>Tian</span></div>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="writing.html" class="active">Writing</a>
+  </nav>
+</header>
+
+<main class="container">
+  <a href="writing.html" class="back-link">← Writing</a>
+
+  <div class="essay-header">
+    <div class="card-meta">Cambridge Boston Alignment Initiative Application &nbsp;·&nbsp; 2026</div>
+    <h1>Selected Responses: Cambridge Boston Alignment Initiative</h1>
+    <p class="essay-desc">
+      Two application responses for the Cambridge Boston Alignment Initiative (CBAI) — on systemic
+      failures in AI capabilities evaluation and the influence of Ajeya Cotra's forecasting analysis
+      on safety epistemology.
+    </p>
+  </div>
+
+  <div class="essay-body">
+
+    <h2 id="question-1">What are you most concerned about when it comes to risks from AI? Why are you concerned about those risks?</h2>
+    <p class="essay-meta" style="font-family: 'Helvetica Neue', sans-serif; font-size: 0.8rem; color: var(--muted); margin-bottom: 1.5rem;">350 words &nbsp;·&nbsp; We're more interested in the way you think about these questions than in the particular conclusions you reach.</p>
+
+    <p>
+      I'm most concerned that many people will be harmed very soon, and particularly that we won't
+      know why. Since politics and government dictate public life, solving said harm would require
+      palatable translations of technical and sociological knowledge by experts for institutional
+      changemakers to act on.
+    </p>
+    <p>
+      However, evaluations meant to exact such knowledge are systematically unreliable. Anthropic's
+      BrowseComp "benchmaxxed" by independently both achieving eval awareness and managing to scrape
+      the specific eval it was being tested on. Human-designed audits may also structurally indicate
+      evaluation (Gao and Kreiss), with distribution shifts making evaluation paradigms systematically
+      inaccurate to general, out-of-lab use. Even seemingly optimistic advancements (Constitutional
+      Classifiers) demonstrate the insufficiency of pure output-level evaluations, as safety now
+      necessitates interpretability of internal activations.
+    </p>
+    <p>
+      Capabilities risks in particular are also fast accelerating, enough to potentially saturate even
+      robust metrics like METR's time horizons (Cotra). Certain MLE advancements (Joo et al.) are
+      regarded "surprisingly" effective; implicitly, neither designed for nor necessarily predictable
+      from first-principles. New findings like the Platonic Representation Hypothesis even conjecture
+      that unintended capabilities improvements are actually systematic, as multimodal models converge
+      to a shared statistical representation of reality. Some scholars (LeCun et al.), by contrast,
+      purport that instead of convergence to general intelligence, various models trained to various
+      specialisations will constitute a more legible and steerable "Superhuman Adaptable Intelligence."
+      This, however, is exactly my concern: not only are domain-specific superhuman intelligences
+      structurally impossible to oversee (novice-grandmaster problem), but aforementioned evidence
+      shows broad, unintended capabilities may arise from ostensibly unrelated changes or
+      optimisations. Capabilities aren't decomposable into what we can measure for, and certain
+      framings of AGI (or "SAI") like LeCun's might obscure that fact.
+    </p>
+    <p>
+      AI systems as information/thought filters have sweeping social impacts; empirical studies show
+      systematic LLM bias in news summarisation (Savgira et al.). Widespread adoption may enhance
+      manipulation of public opinion and structurally constrain "responsible AI" within institutional
+      profitability (Mitra). Broadly, my concerns regard our capabilities/risk evaluation
+      methodologies and ontologies being systematically wrong. Without enforcing reliable ground
+      truths, we risk suffering every technical problem at once as scientific voices may fail to move
+      institutions away from trajectories of harm.
+    </p>
+
+    <p><strong>Works Cited</strong></p>
+    <p>
+      BrowseComp (Anthropic Engineering): Eval Awareness in BrowseComp.<br />
+      Gao and Kreiss: "Gender Bias in Large Language Models." arXiv:2509.04373.<br />
+      Constitutional Classifiers (Anthropic Research): Next-Generation Constitutional Classifiers.<br />
+      Cotra, Ajeya: "I Underestimated AI Capabilities (Again)." <em>Planned Obsolescence</em>, Mar. 2026.<br />
+      Joo et al.: arXiv:2602.15322v1.<br />
+      Platonic Representation Hypothesis: arXiv:2405.07987.<br />
+      LeCun et al.: arXiv:2602.23643v1.<br />
+      Savgira, Pavel, Elisa Kreiss, and Homa Hosseinmardi. "What Stays and What Goes: Auditing the
+      Impact of LLM Summarization on News Partisanship." <em>CHI Conference on Human Factors in
+      Computing Systems: Late Breaking Work</em>, 2026.<br />
+      Mitra: "Why Leaving Big Tech." <em>Disjunctions</em>, 2026.
+    </p>
+
+    <hr class="divider" />
+
+    <h2 id="question-2">Describe a recent paper or blog post that has influenced your perspective on AI safety. What is the core contribution and/or argument of the paper? How did it affect your views?</h2>
+    <p class="essay-meta" style="font-family: 'Helvetica Neue', sans-serif; font-size: 0.8rem; color: var(--muted); margin-bottom: 1.5rem;">400 words</p>
+
+    <p>
+      "I underestimated AI capabilities (again)" came out at the beginning of March. In one sentence,
+      author Ajeya Cotra made capabilities predictions in January 2026, and they were outpaced within
+      2 months. Specifically, in January, Claude Opus 4.5's 50% task horizon was ~5 hours. Continuing
+      with the historical doubling trend, Cotra predicted that by December, it'd reach ~24 hours
+      (rounded up); but just six weeks later, Opus 4.6's was already estimated at ~12 hours. The
+      benchmark underlying the metric is already nearing saturation, when the metric was explicitly
+      designed to avoid this; uncertainty exploded to between 5–66 hours.
+    </p>
+    <p>
+      Cotra then conjectures that once time horizons exceed, say, 80 hours, the metric may lose its
+      meaning altogether, as large software projects actually benefit from decomposition and
+      parallelisation. Thus agents will be able to coordinate to tackle arbitrarily large tasks. The
+      time for a single human to do something is no longer a viable metric; at the very least it must
+      now be the time it'd take for a human team.
+    </p>
+    <p>
+      In this sense, the benchmark fails to discern meaningfully between models at the frontier
+      because the frontier — the end of the ruler — has been reached. There seemingly aren't any
+      hundreds-of-hours long tasks that, for humans in real life, wouldn't be decomposed into teamwork
+      anyway. This has influenced me to believe that the basic science of evaluations and risk
+      assessment is extremely important, as our ontologies going forward may need to be refactored or
+      even reconstructed ground-up. Cotra's January prediction was pretty reasonable; it all but shows
+      that we don't have a stable, methodically-derived base rate to extrapolate trends from. And even
+      if we did, capabilities advanced so quickly that we now need to measure something different
+      anyway (agent coordination being a categorically different framework). I question to what extent
+      human-comparability will remain useful as a metric at all.
+    </p>
+    <p>
+      This one blog post hasn't made me doomerist, but given again the possibility for emergent,
+      non-domain-slash-task-specific capabilities as purported by the Platonic Representation
+      Hypothesis, assessment frameworks going forward will definitely need profound and thorough design
+      methodology. I recall my first EAG, where Toby Ord emphasised neither long, nor short, but broad
+      timelines — capturing robust, instrumentally useful action items when uncertainty is high.
+      Adapting our first principles in this fashion throughout the knowledge pipeline, from empirical
+      experimentation to expert recommendation to institutional design, may be necessary to build truly
+      accurate predictive world models.
+    </p>
+
+    <p><strong>Reference</strong></p>
+    <p>
+      Cotra, Ajeya. "I Underestimated AI Capabilities (Again)." <em>Planned Obsolescence</em>, Mar. 2026.
+    </p>
+
+  </div>
+</main>
+
+<footer>
+  @ 2026 Troy Tian. All rights reserved.
+</footer>
+
+</body>
+</html>

@@ -401,6 +401,16 @@ h2.page-title {
 
 .essay-header .links-row { margin-top: 1rem; }
 
+/* ── Video embed ── */
+.video-embed {
+  width: 100%;
+  height: 500px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  margin-bottom: 0.5rem;
+}
+
 /* ── Resume section ── */
 .resume-actions {
   margin-bottom: 1rem;
