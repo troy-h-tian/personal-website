@@ -11,11 +11,11 @@
 <body>
 
 <header class="site-header">
-  <nav>
+  <nav aria-label="Main navigation">
     <a href="index.html">About</a>
     <a href="writing.html" class="active">Writing</a>
     <a href="contact.html">Contact</a>
-    <button class="theme-toggle" id="theme-toggle">Dark Mode</button>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">Dark Mode</button>
   </nav>
 </header>
 
@@ -28,7 +28,6 @@
   </div>
 
   <div class="essay-body">
-    <h2>Introduction</h2>
     <p>
       Chinese food is a staple of many an American dining-out experience today. Whether it's Michelin
       star-rated bistros or all-you-can-eat hot pot, Panda Express styrofoam giants or local
@@ -40,7 +39,6 @@
       Chinese American community.</em>
     </p>
 
-    <h2>Origins: Community, Cuisine, and Taishan</h2>
     <p>
       The first Chinese immigrants in the mid-19th century were manual labourers, mostly young men
       from specific, concentrated parts of southern China. Early Chinese immigrants to the US were
@@ -62,7 +60,6 @@
       identity.
     </p>
 
-    <h2>Chinatowns, Commodification, and Racial Tolerance</h2>
     <p>
       Throughout the mid-to-late 19th century, a burgeoning Chinese community in major cities began
       to establish an equally expansive restaurant industry as Chinatowns gave them a place of their
@@ -83,7 +80,6 @@
       their food was often the only path to potential racial tolerance.
     </p>
 
-    <h2>Exclusion, Nativism, and the Economic Lifeline</h2>
     <p>
       The early 20th century saw a further relegation of Chinese into the restaurant business
       specifically, as discrimination and racialized cultural perceptions reinforced restaurants as
@@ -106,7 +102,6 @@
       Chinese-owned businesses a vitally necessary customer base.
     </p>
 
-    <h2>WWII, Civil Rights, and the Politics of Authenticity</h2>
     <p>
       World War II made China an ally and Chinese culture romantic. Later on, the 1965 Immigration
       and Nationality Act removed racist quotas on Asian immigration, creating a surge in migrants
@@ -126,7 +121,6 @@
       simultaneously, including through food.
     </p>
 
-    <h2>Today: Pan-Chinese, Persistent, and Still Evolving</h2>
     <p>
       American Chinese cuisine now finds itself familiarly established and yet also constantly
       evolving, as Chinese continue to form identity and community within the United States' melting
@@ -153,7 +147,6 @@
       Chinese Americans themselves, something nestled snugly in the semantic space between.
     </p>
 
-    <h2>Conclusion</h2>
     <p>
       The odyssey of the American Chinese food industry, from humble beginnings to modern-day
       ubiquity, tells the extraordinary third-culture tale of an unabashedly third-culture people.
@@ -164,7 +157,6 @@
       United States society, making an undoubtedly delicious mark on the country they so
       unforgettably call their own.
     </p>
-    <h2>Works Cited</h2>
     <p>Chang, Connie, et al. "150 Years of Chinese Cuisine in America." UCLA, 2018.</p>
     <p>Chen, Suo, and Xie, Bin. "Institutional discrimination and assimilation: evidence from the Chinese Exclusion Act of 1882." <em>Explorations in Economic History</em>. ScienceDirect, 2024.</p>
     <p>Chen, Yong. "The rise of Chinese food in the United States." <em>Oxford Research Encyclopedia of American History</em>. Oxford University Press, 2017.</p>
@@ -190,6 +182,7 @@
   if (currentTheme === 'dark') {
     html.classList.add('dark-mode');
     themeToggle.textContent = 'Light Mode';
+    themeToggle.setAttribute('aria-label', 'Switch to light mode');
   }
   
   themeToggle.addEventListener('click', () => {
@@ -197,6 +190,7 @@
     const isDark = html.classList.contains('dark-mode');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     themeToggle.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
   });
 </script>
 

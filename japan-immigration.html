@@ -11,11 +11,11 @@
 <body>
 
 <header class="site-header">
-  <nav>
+  <nav aria-label="Main navigation">
     <a href="index.html">About</a>
     <a href="writing.html" class="active">Writing</a>
     <a href="contact.html">Contact</a>
-    <button class="theme-toggle" id="theme-toggle">Dark Mode</button>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">Dark Mode</button>
   </nav>
 </header>
 
@@ -28,7 +28,6 @@
   </div>
 
   <div class="essay-body">
-    <h2>Introduction</h2>
     <p>
       Immigration regimes are broadly the set of policies and institutions that a nation-state uses
       to govern, regulate, control, and otherwise influence the flows of migrants within its
@@ -49,7 +48,6 @@
       fill a desperate economic need.</em>
     </p>
 
-    <h2>Historical Roots and the Multi-Tiered System</h2>
     <p>
       Japan's history as a colonial power and its emphasis on traditional notions of identity and
       belonging engendered the multi-tiered nature of its current immigration regime. Historically,
@@ -81,7 +79,6 @@
       naturalisation to gain citizenship status" (Chung 2021, p. 5).
     </p>
 
-    <h2>Socio-Cultural Assimilationism</h2>
     <p>
       Alongside tradition in a political context, social and cultural perceptions and customs heavily
       influence the restrictive experiences of migrants in Japan. Migrants are categorically consigned
@@ -109,7 +106,6 @@
       the selection of prospective migrants.
     </p>
 
-    <h2>The Education-Migration Industry and Institutional Contradictions</h2>
     <p>
       The intricacies of the Japanese immigration regime are not characterisable only by the
       formally-recognised avenues to labour opportunities and citizenship status, but also those
@@ -128,7 +124,6 @@
       on immigration with its economic reality.
     </p>
 
-    <h2>Conclusion</h2>
     <p>
       An immigration regime is the set of political tools a government can leverage to systematically
       control patterns of migration into its country as well as the quotidian experiences of those
@@ -141,7 +136,6 @@
       regime which is largely restrictive in nature, evidencing its nation's ongoing unwillingness to
       accommodate for a changing economic and global situation.
     </p>
-    <h2>Works Cited</h2>
     <p>Chung, E. A. (2021). "The side doors of immigration: multi-tier migration regimes in Japan and South Korea." <em>Third World Quarterly</em>.</p>
     <p>Ho, E., and Kathiravelu, L. (2022). "More than race: a comparative analysis of 'new' Indian and Chinese migration in Singapore." <em>Ethnic and Racial Studies</em>.</p>
     <p>Hugo, G. (2012). "International labour migration and migration policies in Southeast Asia." <em>Asian Journal of Social Science</em>.</p>
@@ -166,6 +160,7 @@
   if (currentTheme === 'dark') {
     html.classList.add('dark-mode');
     themeToggle.textContent = 'Light Mode';
+    themeToggle.setAttribute('aria-label', 'Switch to light mode');
   }
   
   themeToggle.addEventListener('click', () => {
@@ -173,6 +168,7 @@
     const isDark = html.classList.contains('dark-mode');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     themeToggle.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
   });
 </script>
 

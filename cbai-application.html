@@ -11,11 +11,11 @@
 <body>
 
 <header class="site-header">
-  <nav>
+  <nav aria-label="Main navigation">
     <a href="index.html">About</a>
     <a href="writing.html" class="active">Writing</a>
     <a href="contact.html">Contact</a>
-    <button class="theme-toggle" id="theme-toggle">Dark Mode</button>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">Dark Mode</button>
   </nav>
 </header>
 
@@ -27,10 +27,9 @@
     <h1>Selected Responses: Cambridge Boston Alignment Initiative</h1>
   </div>
 
-  <div class="essay-body">
-
-    <h2 id="question-1">What are you most concerned about when it comes to risks from AI? Why are you concerned about those risks?</h2>
-    <p class="essay-prompt">350 words &nbsp;·&nbsp; We're more interested in the way you think about these questions than in the particular conclusions you reach.</p>
+  <div class="essay-body" id="question-1">
+    <h2>01 &nbsp;·&nbsp; AI Risk: Systematic Failures in Evaluation Ontologies</h2>
+    <p><em>Prompt: What are you most concerned about when it comes to risks from AI? Why are you concerned about those risks? &nbsp;·&nbsp; 350 words &nbsp;·&nbsp; We're more interested in the way you think about these questions than in the particular conclusions you reach.</em></p>
 
     <p>
       I'm most concerned that many people will be harmed very soon, and particularly that we won't
@@ -87,10 +86,13 @@
       Mitra: "Why Leaving Big Tech." <em>Disjunctions</em>, 2026.
     </p>
 
-    <hr class="divider" />
+  </div>
 
-    <h2 id="question-2">Describe a recent paper or blog post that has influenced your perspective on AI safety. What is the core contribution and/or argument of the paper? How did it affect your views?</h2>
-    <p class="essay-prompt">400 words</p>
+  <hr class="divider" />
+
+  <div class="essay-body" id="question-2">
+    <h2>02 &nbsp;·&nbsp; On Cotra's Capabilities Forecasting and the End of the Ruler</h2>
+    <p><em>Prompt: Describe a recent paper or blog post that has influenced your perspective on AI safety. What is the core contribution and/or argument of the paper? How did it affect your views? &nbsp;·&nbsp; 400 words</em></p>
 
     <p>
       "I underestimated AI capabilities (again)" came out at the beginning of March. In one sentence,
@@ -152,6 +154,7 @@
   if (currentTheme === 'dark') {
     html.classList.add('dark-mode');
     themeToggle.textContent = 'Light Mode';
+    themeToggle.setAttribute('aria-label', 'Switch to light mode');
   }
   
   themeToggle.addEventListener('click', () => {
@@ -159,6 +162,7 @@
     const isDark = html.classList.contains('dark-mode');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     themeToggle.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
   });
 </script>
 

@@ -11,11 +11,11 @@
 <body>
 
 <header class="site-header">
-  <nav>
+  <nav aria-label="Main navigation">
     <a href="index.html">About</a>
     <a href="writing.html" class="active">Writing</a>
     <a href="contact.html">Contact</a>
-    <button class="theme-toggle" id="theme-toggle">Dark Mode</button>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">Dark Mode</button>
   </nav>
 </header>
 
@@ -28,7 +28,6 @@
   </div>
 
   <div class="essay-body">
-    <h2>Introduction</h2>
     <p>
       Now more than ever, people are migrating between countries at an exponentially increasing rate.
       In Asia, the world's largest continent by land area as well as population, the mobility of
@@ -59,7 +58,6 @@
       Community.</em>
     </p>
 
-    <h2>Economic Motivation and Its Limits</h2>
     <p>
       A primary motivator for intra-Asian migration is economic opportunity: chances to fully utilise
       one's skills, the consequence of which is the obtaining of remittances to send back to the
@@ -96,7 +94,6 @@
       characterise the disparate development trajectories of various communities and countries.
     </p>
 
-    <h2>Socio-Cultural Affinity and Persistent Division</h2>
     <p>
       Another motivator for intra-Asian migration is some sort of affinity with the host country —
       in terms of ethnic, historical, diasporic, or some other sense of purported belonging in that
@@ -140,7 +137,6 @@
       difference, rather than integration.
     </p>
 
-    <h2>Conclusion</h2>
     <p>
       Migration is motivated by major factors such as economic opportunity and socio-cultural
       affinity, the consequences of which may include actualisation just as much as exploitation and
@@ -150,7 +146,6 @@
       quotidian migrant experiences are fundamentally shaped by the current conception of the
       nation-state, and transnationalism remains our best working framework for the future.
     </p>
-    <h2>Works Cited</h2>
     <p>Chung, E. A. (2021). "The side doors of immigration: multi-tier migration regimes in Japan and South Korea." <em>Third World Quarterly</em>.</p>
     <p>Chung, J. K. (2025). Lecture, Asian American Studies M179. UCLA. 11 Dec. 2025.</p>
     <p>Eversole, R., and Johnson, H. (2014). "Migrant remittances and household development: an anthropological analysis." <em>Development Studies Research</em>.</p>
@@ -180,6 +175,7 @@
   if (currentTheme === 'dark') {
     html.classList.add('dark-mode');
     themeToggle.textContent = 'Light Mode';
+    themeToggle.setAttribute('aria-label', 'Switch to light mode');
   }
   
   themeToggle.addEventListener('click', () => {
@@ -187,6 +183,7 @@
     const isDark = html.classList.contains('dark-mode');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     themeToggle.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
   });
 </script>
 

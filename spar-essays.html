@@ -11,11 +11,11 @@
 <body>
 
 <header class="site-header">
-  <nav>
+  <nav aria-label="Main navigation">
     <a href="index.html">About</a>
     <a href="writing.html" class="active">Writing</a>
     <a href="contact.html">Contact</a>
-    <button class="theme-toggle" id="theme-toggle">Dark Mode</button>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">Dark Mode</button>
   </nav>
 </header>
 
@@ -34,52 +34,52 @@
       <div class="spar-feat-card">
         <div class="num">01</div>
         <h4><a href="#price-anderson">AI Liability Caps</a></h4>
-        <p>A tiered Price-Anderson–style framework for frontier AI deployment liability.</p>
+        <p>Yes, I would include a liability cap, but it would be both conditional and strictly tiered...</p>
       </div>
       <div class="spar-feat-card">
         <div class="num">02</div>
         <h4><a href="#openai">OpenAI Preparedness Framework</a></h4>
-        <p>Three technical arguments for why OpenAI's safety plan may fail.</p>
+        <p>I chose OpenAI, using their most recent Preparedness Framework as reference...</p>
       </div>
       <div class="spar-feat-card">
         <div class="num">03</div>
         <h4><a href="#biomarker">Biomarker Qualification &amp; AI Evals</a></h4>
-        <p>Whether FDA biomarker qualification transfers to AI evaluation development.</p>
+        <p>One specific feature of the biomarker qualification program is that biomarkers have highly specific and tightly scoped Context of Use (COU) statements...</p>
       </div>
       <div class="spar-feat-card">
         <div class="num">04</div>
         <h4><a href="#loc">Loss of Control Brainstorm</a></h4>
-        <p>Non-technical factors influencing the probability of Loss of Control scenarios.</p>
+        <p>One of the biggest and most generalisable factors for a Loss of Control scenario is the idea that proxies are not necessarily good measures of whatever they actually seek to represent...</p>
       </div>
       <div class="spar-feat-card">
         <div class="num">05</div>
         <h4><a href="#martingale">Martingale Evaluation of Human–LLM Interaction</a></h4>
-        <p>An experiment design for detecting sycophancy and epistemic drift using martingale-based scoring.</p>
+        <p>I chose the Tier 1 Project C: Martingale evaluation of human–LLM interaction, with the goal of explaining inverse scaling, sycophancy, and conformity using a martingale-based score...</p>
       </div>
       <div class="spar-feat-card">
         <div class="num">06</div>
         <h4><a href="#sl5">Flaws in SL5 Draft Control Specifications</a></h4>
-        <p>Four flaws in control specifications from historical drafts of the SL5 Standard.</p>
+        <p>In SI-7(15), the Parameter Value-mandated code authentication including execution tasks is stated in the Supplemental Guidance to be "not yet available in commercial accelerators"...</p>
       </div>
       <div class="spar-feat-card">
         <div class="num">07</div>
         <h4><a href="#spillover">Capabilities Spillover: Automated Verifiers</a></h4>
-        <p>Automated verifier/critique methods as an underexamined spillover risk in AI safety research.</p>
+        <p>One additional case of AI safety research not mentioned in the research proposal is automated verifier/critique methods...</p>
       </div>
       <div class="spar-feat-card">
         <div class="num">08</div>
         <h4><a href="#ironwood">Google Ironwood: A Reader's Guide</a></h4>
-        <p>What Google's Ironwood announcement gets right, gets wrong, and leaves out.</p>
+        <p>Ironwood is Google's newest (7th-generation) Tensor Processing Unit, the first designed specifically for inference (as opposed to training)...</p>
       </div>
       <div class="spar-feat-card">
         <div class="num">09</div>
         <h4><a href="#karma">Karma as Force, Not Variable</a></h4>
-        <p>A Buddhist reconciliation: karma as moral cause-and-effect, not numerical carry-over.</p>
+        <p>As a Buddhist convert, I embrace karmic morality: if you're good now, your next life is better, and vice versa...</p>
       </div>
       <div class="spar-feat-card">
         <div class="num">10</div>
         <h4><a href="#fundamental-right">Fundamental Rights in the Age of AI</a></h4>
-        <p>Vague legislation, manufactured consent, and the case for enshrining AI epistemic rights.</p>
+        <p>I believe that the biggest issues a new fundamental right should be aimed at mitigating would be vagueness in legislation and accountability during arbitrage...</p>
       </div>
     </div>
   </div>
@@ -566,6 +566,7 @@
   if (currentTheme === 'dark') {
     html.classList.add('dark-mode');
     themeToggle.textContent = 'Light Mode';
+    themeToggle.setAttribute('aria-label', 'Switch to light mode');
   }
   
   themeToggle.addEventListener('click', () => {
@@ -573,6 +574,7 @@
     const isDark = html.classList.contains('dark-mode');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     themeToggle.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
   });
 </script>
 

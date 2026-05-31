@@ -11,11 +11,11 @@
 <body>
 
 <header class="site-header">
-  <nav>
+  <nav aria-label="Main navigation">
     <a href="index.html">About</a>
     <a href="writing.html" class="active">Writing</a>
     <a href="contact.html">Contact</a>
-    <button class="theme-toggle" id="theme-toggle">Dark Mode</button>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">Dark Mode</button>
   </nav>
 </header>
 
@@ -52,7 +52,6 @@
   </div>
 
   <div class="essay-body">
-    <h2>Introduction</h2>
     <p>
       Leonie Biney is a British artist of Ghanaian, Nigerian, Sierra Leonean, and Jordanian ancestry.
       As a singer-songwriter who works largely independently, her music blends bedroom pop, dream pop,
@@ -85,7 +84,6 @@
       unbounded romantic realities.</em>
     </p>
 
-    <h2>Definitions</h2>
     <p>
       To clarify, I will define the philosophical terms used in my thesis as follows.
     </p>
@@ -109,7 +107,6 @@
       future is still magical and surreal and thus a departure from currently lived reality.
     </p>
 
-    <h2>Thin Personage and Lyrical Relatability</h2>
     <p>
       As stated, like many of Biney's other songs, "Groupie" is told from an intimate first-person
       perspective and directly addresses an unspecified subject in the second person. In general, her
@@ -174,7 +171,6 @@
       independently.
     </p>
 
-    <h2>The Music Video: Afrofuturist Aesthetics</h2>
     <p>
       The music video in particular can be analysed as a holistic product, with emphasis on its
       overarching themes and evocative aesthetics. The video's cinematic choices and edited visual
@@ -253,7 +249,6 @@
       individuality into the fantasies she shares with her audience, the world.
     </p>
 
-    <h2>Conclusion</h2>
     <p>
       To conclude, the music of Leonie Biney embodies in its every artistic styling, choice, and very
       nature the Black feminism of simple aliveness. In universalising her extremely personal
@@ -265,7 +260,6 @@
       in the final lyrics of her song, "can I be someone at all?" She answers herself with music.
     </p>
 
-    <h2>Works Cited</h2>
     <p>
       Abrams, Kathryn. "Dominance Feminism: Placing Sexualized Power at the Center." <em>The Oxford
       Handbook of Feminism and Law in the United States</em>, edited by Deborah Break et al., Oxford
@@ -313,6 +307,7 @@
   if (currentTheme === 'dark') {
     html.classList.add('dark-mode');
     themeToggle.textContent = 'Light Mode';
+    themeToggle.setAttribute('aria-label', 'Switch to light mode');
   }
   
   themeToggle.addEventListener('click', () => {
@@ -320,6 +315,7 @@
     const isDark = html.classList.contains('dark-mode');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     themeToggle.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
   });
 </script>
 

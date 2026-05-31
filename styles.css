@@ -103,7 +103,7 @@ footer {
 
 /* ── Home page ── */
 .hero {
-  padding: 4rem 1.5rem 2rem;
+  padding: 3rem 1.5rem 0;
   max-width: var(--max-w);
   margin: 0 auto;
 }
@@ -112,7 +112,7 @@ footer {
   font-size: 2.5rem;
   font-weight: normal;
   line-height: 1.2;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .hero h1 span { color: var(--text); }
@@ -129,7 +129,7 @@ footer {
   font-size: 1.05rem;
   color: var(--muted);
   max-width: 620px;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 
 .links-row {
@@ -166,7 +166,7 @@ footer {
 h2.page-title {
   font-size: 1.75rem;
   font-weight: normal;
-  margin-bottom: 0.5rem;
+  margin-bottom: 3.5rem;
 }
 
 .page-desc {
@@ -293,6 +293,52 @@ h2.page-title {
 
 /* ── Writing page ── */
 .writing-section { margin-bottom: 3.5rem; }
+
+.writing-entry { padding: 1.1rem 0; }
+
+.writing-entry-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.writing-entry-link:hover .writing-entry-title { text-decoration: underline; }
+
+.writing-entry-title {
+  font-size: 1.05rem;
+  font-weight: normal;
+  margin-bottom: 0.3rem;
+  color: var(--text);
+}
+
+.writing-entry-excerpt {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.writing-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+/* ── Contact links (plain vertical list) ── */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+.contact-links a {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.contact-links a:hover { text-decoration: underline; }
 
 /* ── Essay page ── */
 .essay-header {
@@ -432,7 +478,7 @@ h2.page-title {
 .divider {
   border: none;
   border-top: 1px solid var(--border);
-  margin: 0 0 2rem 0;
+  margin: 2rem 0;
 }
 
 /* ── PDF embed ── */
@@ -488,4 +534,44 @@ h2.page-title {
 .resume-embed {
   height: 900px;
   border-radius: 6px;
+}
+
+/* ── Focus styles (keyboard navigation) ── */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ── High contrast ── */
+@media (prefers-contrast: more) {
+  :root {
+    --border: #000000;
+    --surface: #f0f0f0;
+  }
+
+  html.dark-mode {
+    --border: #ffffff;
+    --surface: #1a1a1a;
+  }
+
+  a { text-decoration: underline; }
+  nav a { text-decoration: none; }
+  nav a:hover, nav a.active { text-decoration: underline; }
+
+  .card { border-width: 2px; }
+  .spar-feat-card { border-width: 2px; }
+  .essay-header { border-bottom-width: 2px; }
+  .site-header { border-bottom-width: 2px; }
+  footer { border-top-width: 2px; }
 }
