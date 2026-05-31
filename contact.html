@@ -3,15 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Feedback — Troy Hanfei Tian</title>
+  <title>Contact — Troy Hanfei Tian</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <style>
-    .feedback-form {
-      max-width: 560px;
+    .contact-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
     }
-    .feedback-form textarea {
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.9rem;
+      border-radius: 4px;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .contact-links a:hover { color: var(--text); text-decoration: none; }
+    .contact-form-wrap { max-width: 560px; }
+    .contact-form-wrap textarea {
       width: 100%;
       min-height: 180px;
       padding: 0.85rem 1rem;
@@ -26,11 +43,11 @@
       margin-bottom: 1rem;
       transition: border-color 0.15s;
     }
-    .feedback-form textarea:focus {
+    .contact-form-wrap textarea:focus {
       outline: none;
       border-color: var(--text);
     }
-    .feedback-form button {
+    .contact-form-wrap button {
       font-family: 'Helvetica Neue', sans-serif;
       font-size: 0.8rem;
       text-transform: uppercase;
@@ -43,13 +60,18 @@
       cursor: pointer;
       transition: opacity 0.15s;
     }
-    .feedback-form button:hover { opacity: 0.75; }
-    .feedback-note {
+    .contact-form-wrap button:hover { opacity: 0.75; }
+    .contact-note {
       font-family: 'Helvetica Neue', sans-serif;
       font-size: 0.8rem;
       color: var(--muted);
       margin-bottom: 1.5rem;
       line-height: 1.6;
+    }
+    .feedback-heading {
+      font-size: 1.1rem;
+      font-weight: normal;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
@@ -59,24 +81,28 @@
   <nav>
     <a href="index.html">About</a>
     <a href="writing.html">Writing</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="active">Contact</a>
     <button class="theme-toggle" id="theme-toggle">Dark Mode</button>
   </nav>
 </header>
 
 <main class="container">
-  <a href="index.html" class="back-link">Home</a>
+  <h2 class="page-title">Contact</h2>
+  <p class="page-desc">Get in touch or leave anonymous feedback.</p>
 
-  <div class="essay-header">
-    <div class="card-meta">Anonymous &nbsp;·&nbsp; No login required</div>
-    <h1>Leave Feedback</h1>
-    <p class="essay-desc">
-      Thoughts on my writing, the site, or anything else — sent directly to me. No name or email needed.
-    </p>
+  <div class="contact-links">
+    <a href="https://www.linkedin.com/in/troy-tian" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/troy-h-tian" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.lesswrong.com/users/troy-tian" target="_blank" rel="noopener">LessWrong</a>
+    <a href="https://substack.com/@tianhanfei" target="_blank" rel="noopener">Substack</a>
+    <a href="mailto:troyhtian@g.ucla.edu">troyhtian@g.ucla.edu</a>
   </div>
 
-  <div class="feedback-form">
-    <p class="feedback-note">Your message is anonymous. I won't know who you are unless you tell me.</p>
+  <hr class="divider" />
+
+  <h2 class="feedback-heading">Leave Feedback</h2>
+  <div class="contact-form-wrap">
+    <p class="contact-note">Anonymous. I won't know who you are unless you tell me.</p>
     <form action="https://formspree.io/f/mvzynwgq" method="POST">
       <textarea name="message" placeholder="Write anything..." required></textarea>
       <button type="submit">Send</button>
