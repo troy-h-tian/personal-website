@@ -15,14 +15,15 @@
   <nav>
     <a href="index.html">About</a>
     <a href="writing.html" class="active">Writing</a>
+    <button class="theme-toggle" id="theme-toggle">Dark Mode</button>
   </nav>
 </header>
 
 <main class="container">
-  <a href="writing.html" class="back-link">← Writing</a>
+  <a href="writing.html" class="back-link">Writing</a>
 
   <div class="essay-header">
-    <div class="card-meta">Asian American Studies M179 &nbsp;·&nbsp; UCLA &nbsp;·&nbsp; 2026</div>
+    <div class="card-meta">Asian American Studies M179 &nbsp;·&nbsp; UCLA &nbsp;·&nbsp; March 2026</div>
     <h1>Japan's Restrictive Multi-Tiered Immigration Regime</h1>
     <p class="essay-desc">
       How Japan's colonial history, ethnonationalist cultural identity, and paternalistic social
@@ -160,6 +161,25 @@
 <footer>
   @ 2026 Troy Tian. All rights reserved.
 </footer>
+
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  
+  // Check for saved theme preference or default to light mode
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  if (currentTheme === 'dark') {
+    html.classList.add('dark-mode');
+    themeToggle.textContent = 'Light Mode';
+  }
+  
+  themeToggle.addEventListener('click', () => {
+    html.classList.toggle('dark-mode');
+    const isDark = html.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    themeToggle.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+  });
+</script>
 
 </body>
 </html>
