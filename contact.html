@@ -53,6 +53,7 @@
 </head>
 <body>
 
+<a href="#contact-main" class="skip-link">Skip to main content</a>
 <header class="site-header">
   <nav aria-label="Main navigation">
     <a href="index.html">About</a>
@@ -62,7 +63,8 @@
   </nav>
 </header>
 
-<main class="container">
+<main class="container" id="contact-main">
+  <h1 class="sr-only">Contact</h1>
   <div class="contact-links">
     <a href="https://www.linkedin.com/in/troy-tian" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/troy-h-tian" target="_blank" rel="noopener">GitHub</a>
@@ -76,7 +78,8 @@
   <div class="contact-form-wrap">
     <p class="contact-note">Leave anonymous feedback — I won't know who you are unless you tell me.</p>
     <form action="https://formspree.io/f/mvzynwgq" method="POST">
-      <textarea name="message" placeholder="Write anything..." required></textarea>
+      <label for="contact-message" class="sr-only">Anonymous message</label>
+      <textarea id="contact-message" name="message" placeholder="Write anything..." required aria-label="Anonymous message"></textarea>
       <button type="submit" class="submit-btn">Send</button>
     </form>
   </div>
