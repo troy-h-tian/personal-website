@@ -37,14 +37,16 @@ a:hover { text-decoration: underline; }
 /* ── Layout ── */
 .site-header {
   border-bottom: 1px solid var(--border);
-  padding: 1.25rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   position: sticky;
   top: 0;
   background: var(--bg);
   z-index: 10;
+}
+
+.site-header nav {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
 }
 
 .site-header .logo {
@@ -79,7 +81,7 @@ nav a:hover, nav a.active { color: var(--text); text-decoration: none; }
 .container {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 3rem 2rem 2rem;
+  padding: 3rem 1.5rem 2rem;
 }
 
 .container--no-top-pad { padding-top: 0; }
@@ -101,7 +103,7 @@ footer {
 
 /* ── Home page ── */
 .hero {
-  padding: 4rem 2rem 2rem;
+  padding: 4rem 1.5rem 2rem;
   max-width: var(--max-w);
   margin: 0 auto;
 }
@@ -279,6 +281,14 @@ h2.page-title {
   font-size: 1.3rem;
   font-weight: normal;
   margin-bottom: 1rem;
+}
+
+.essay-prompt {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.04em;
 }
 
 /* ── Writing page ── */
