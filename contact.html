@@ -28,7 +28,7 @@
       outline: none;
       border-color: var(--text);
     }
-    .contact-form-wrap button {
+    .contact-form-wrap .submit-btn {
       font-family: 'Helvetica Neue', sans-serif;
       font-size: 0.8rem;
       text-transform: uppercase;
@@ -41,7 +41,7 @@
       cursor: pointer;
       transition: opacity 0.15s;
     }
-    .contact-form-wrap button:hover { opacity: 0.75; }
+    .contact-form-wrap .submit-btn:hover { opacity: 0.75; }
     .contact-note {
       font-family: 'Helvetica Neue', sans-serif;
       font-size: 0.8rem;
@@ -77,7 +77,7 @@
     <p class="contact-note">Leave anonymous feedback — I won't know who you are unless you tell me.</p>
     <form action="https://formspree.io/f/mvzynwgq" method="POST">
       <textarea name="message" placeholder="Write anything..." required></textarea>
-      <button type="submit">Send</button>
+      <button type="submit" class="submit-btn">Send</button>
     </form>
   </div>
 </main>

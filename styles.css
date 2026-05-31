@@ -33,6 +33,7 @@ body {
 
 a { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
+h1, h2, h3, h4 { font-weight: normal; }
 
 /* ── Layout ── */
 .site-header {
@@ -294,7 +295,7 @@ h2.page-title {
 /* ── Writing page ── */
 .writing-section { margin-bottom: 3.5rem; }
 
-.writing-entry { padding: 1.1rem 0; }
+.writing-entry { padding: 1.5rem 0; }
 
 .writing-entry-link {
   display: block;
@@ -328,7 +329,7 @@ h2.page-title {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 
 .contact-links a {
@@ -372,7 +373,7 @@ h2.page-title {
   font-size: 1.15rem;
   font-weight: normal;
   color: var(--text);
-  margin: 2.25rem 0 0.75rem;
+  margin: 0 0 0.75rem;
 }
 
 .essay-body p {
