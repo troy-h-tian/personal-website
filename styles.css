@@ -4,8 +4,6 @@
   --border: #d0d0d0;
   --text: #000000;
   --muted: #000000;
-  --accent: #c8a96e;
-  --accent-dim: #a88a50;
   --link: #000000;
   --tag-bg: #efefef;
   --max-w: 800px;
@@ -189,7 +187,7 @@ h2.page-title {
   transition: border-color 0.15s;
 }
 
-.card:hover { border-color: var(--accent-dim); }
+.card:hover { border-color: var(--text); }
 
 .card a.card-link {
   display: block;
@@ -238,7 +236,7 @@ h2.page-title {
 .featured-strip {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--text);
   border-radius: 6px;
   padding: 1.25rem 1.5rem;
   margin-bottom: 1rem;
@@ -315,7 +313,7 @@ h2.page-title {
 }
 
 .essay-body blockquote {
-  border-left: 2px solid var(--accent-dim);
+  border-left: 2px solid var(--border);
   padding-left: 1.25rem;
   margin: 1.5rem 0;
   color: var(--muted);
@@ -349,7 +347,7 @@ h2.page-title {
 /* ── SPAR page featured grid ── */
 .spar-featured {
   background: var(--surface);
-  border: 1px solid var(--accent-dim);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 2rem;
   margin-bottom: 3rem;
@@ -377,7 +375,7 @@ h2.page-title {
   transition: border-color 0.15s;
 }
 
-.spar-feat-card:hover { border-color: var(--accent-dim); }
+.spar-feat-card:hover { border-color: var(--text); }
 
 .spar-feat-card a {
   color: var(--text);
