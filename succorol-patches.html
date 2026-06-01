@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Succorol® Patches — Troy Hanfei Tian</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body>
+
+<a href="#succorol-main" class="skip-link">Skip to main content</a>
+<header class="site-header">
+  <nav aria-label="Main navigation">
+    <a href="index.html">About</a>
+    <a href="writing.html" class="active">Writing</a>
+    <a href="contact.html">Contact</a>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">Dark Mode</button>
+  </nav>
+</header>
+
+<main class="container" id="succorol-main">
+
+  <div class="essay-header">
+    <div class="card-meta">Asian American Studies 176 &nbsp;·&nbsp; UCLA &nbsp;·&nbsp; April 2026</div>
+    <h1>Succorol® Patches, 200 mg</h1>
+  </div>
+
+  <div class="pdf-section">
+    <p class="section-label">Original Work (PDF)</p>
+    <div class="resume-actions">
+      <a href="succorol-patches.pdf" download="Troy_Hanfei_Tian_Succorol_Patches.pdf" class="resume-download">Download PDF</a>
+    </div>
+    <iframe
+      src="succorol-patches.pdf#navpanes=0&pagemode=none"
+      class="pdf-embed"
+      title="Succorol® Patches, 200 mg"
+    ></iframe>
+  </div>
+
+  <div class="essay-body">
+    <h2>Artist Statement</h2>
+    <p>
+      I am exploring the story <em>The Kontrabida</em> from Mia Alvar's <em>In the Country</em>. In
+      particular, my piece is a catalog poem, entitled "Succorol® Patches, 200 mg". The poem is a
+      realistic recreation of a commercial drug label with ingredients, uses, and warnings outlined;
+      I based it specifically on the commercial label for Ibuprofen. I was inspired to create this by
+      the fact that I thought initially that Succorol was a real painkiller, like the other named
+      medical substances in the story (e.g. doxorubicin being an actual chemotherapy drug); upon
+      further research, however, I found that it was not.
+    </p>
+    <p>
+      Thus I inferred that the fictional name was chosen from the word "succour", which means to assist
+      or give aid to, and that this was the symbolic meaning of the drug in the context of Steve and his
+      mother's relationship with Steve's father. Thus, when writing out the fictionalised label, I
+      attempted to catalog the effects of Succorol as a symbol for servitude and obedience in a
+      relationship. I expanded these descriptions to include effects on both recipients and
+      administrators of the patches, and attempted to encompass the stories of Steve, Loretta, and
+      Esteban, respectively, within the label.
+    </p>
+    <p>
+      My vision was a subtle, bitter, and sardonic allusion to the inequitable and abusive nature of
+      Succorol as a metaphor for servitude, what engenders its existence, and the struggles people face
+      in its administration (e.g. Steve stealing from his job to secure it). I thought it was
+      interesting to delicately explore its "side effects" (formulated as somewhat "real-sounding"
+      medical terminology) both in immediacy and over time as the contrast between proclaimed love and
+      forcefully exerted power create severe cognitive dissonance.
+    </p>
+    <p>
+      I intended for the distant, clinical, and prescriptive nature of the medical catalog to read as a
+      dry and almost satirical yet still emotional discussion of the many layers of oppression,
+      projection, and complexity that abusive relationships create within the psyches of every person
+      involved. I also think Succorol's cultural particularities were interesting to allude to,
+      especially the example of the typical kontrabida as a cultural icon and the subversion of the
+      typical Philippine love story by Steve, his father, and his mother all at once. Finally, I
+      enjoyed utilising the symbolism and implications of certain real medical symptoms as a way to add
+      character to my narrative.
+    </p>
+    <p>
+      Overall, my poem (a "catalog of catalogs", due to the sets of several lists within the overall
+      drug label) reads as an abstraction of the general theme of servitude through the metaphor of
+      Succorol, and the complex dimensions of such.
+    </p>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 2026 Troy Hanfei Tian. All rights reserved.
+</footer>
+
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  if (currentTheme === 'dark') {
+    html.classList.add('dark-mode');
+    themeToggle.textContent = 'Light Mode';
+    themeToggle.setAttribute('aria-label', 'Switch to light mode');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    html.classList.toggle('dark-mode');
+    const isDark = html.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    themeToggle.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  });
+</script>
+
+</body>
+</html>
