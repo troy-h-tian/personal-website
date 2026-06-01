@@ -194,7 +194,10 @@
           if (el.scrollHeight <= maxHeight + 4) lo = mid;
           else hi = mid;
         }
-        var truncated = fullText.slice(0, lo).trimEnd().replace(/[.,;:—–!?\s]+$/, '');
+        var truncated = fullText.slice(0, lo);
+        var lastSpace = truncated.lastIndexOf(' ');
+        if (lastSpace > 0) truncated = truncated.slice(0, lastSpace);
+        truncated = truncated.trimEnd().replace(/[.,;:—–!?\s]+$/, '');
         el.textContent = truncated + '...';
       }
     });
