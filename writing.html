@@ -194,35 +194,6 @@
     themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
   });
 
-  function truncateExcerpts() {
-    document.querySelectorAll('.writing-entry-excerpt').forEach(function(el) {
-      var style = window.getComputedStyle(el);
-      var lineHeight = parseFloat(style.lineHeight) || parseFloat(style.fontSize) * 1.6;
-      var maxHeight = lineHeight * 3;
-      var fullText = el.textContent.replace(/\s+/g, ' ').trim();
-      el.textContent = fullText;
-      if (el.scrollHeight <= maxHeight + 4) {
-        var text = fullText.replace(/[.,;:—–!?\s]+$/, '');
-        el.textContent = text + '...';
-      } else {
-        var lo = 0, hi = fullText.length;
-        while (lo < hi - 1) {
-          var mid = Math.floor((lo + hi) / 2);
-          el.textContent = fullText.slice(0, mid) + '...';
-          if (el.scrollHeight <= maxHeight + 4) lo = mid;
-          else hi = mid;
-        }
-        var truncated = fullText.slice(0, lo);
-        var lastSpace = truncated.lastIndexOf(' ');
-        if (lastSpace > 0) truncated = truncated.slice(0, lastSpace);
-        truncated = truncated.trimEnd().replace(/[.,;:—–!?\s]+$/, '');
-        el.textContent = truncated + '...';
-      }
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', truncateExcerpts);
-  window.addEventListener('resize', truncateExcerpts);
 </script>
 
 </body>
