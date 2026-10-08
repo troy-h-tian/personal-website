@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Algorithmic Monocultures — Troy Hanfei Tian</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
 </head>
 <body>
 
 <a href="#urc-application-main" class="skip-link">Skip to main content</a>
 <header class="site-header">
   <nav aria-label="Main navigation">
-    <a href="index.html">About</a>
-    <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
-    <a href="writing.html" class="active">Writing</a>
-    <a href="contact.html">Contact</a>
+    <a href="../index.html">About</a>
+    <a href="../resume.pdf" target="_blank" rel="noopener">Resume</a>
+    <a href="../writing.html" class="active">Writing</a>
+    <a href="../contact.html">Contact</a>
     <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">Dark Mode</button>
     <div class="social-links">
       <a href="https://www.linkedin.com/in/troy-tian" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
@@ -50,13 +50,13 @@
       Recent work has shown that LLMs consistently but non-uniformly neutralise the lean of
       moderately partisan articles (Savgira et al., 2026). Thus, the framing of topics as well as
       the alignment techniques used to enforce neutrality exhibit a cascading spillover from external
-      ideological biases (Smith &amp; Doe, 2025), enforcing an algorithmic monoculture. The central
+      ideological biases (“Bias Spillover in Language Models,” 2025), enforcing an algorithmic monoculture. The central
       question: <em>to what extent do current LLM alignment techniques, specifically those enforcing
-      political "neutrality," systematically degrade epistemic diversity?</em>
+      political “neutrality,” systematically degrade epistemic diversity?</em>
     </p>
 
     <p>
-      We hypothesise that the fidelity of LLM summaries' representations of source material is
+      We hypothesise that the fidelity of LLM summaries’ representations of source material is
       sacrificed due to biases within training corpora and techniques, driving cascading
       representational collapses in a pursuit of neutrality which is itself defined by established
       narratives (Bang et al., 2024; Savgira et al., 2026).
@@ -74,8 +74,8 @@
       Once models generate summaries, text will be analysed using popular interpretability and
       fairness tools such as LIME or SHAP. Using these tools, we will evaluate along a range of
       framing indicators, running sentiment analyses relating to social and ideological biases and
-      extracting vectors/circuits which trigger neutralisation tendencies (Bang et al., 2024; Smith
-      &amp; Doe, 2025). We will then employ a latent variable model to decompose the generated text
+      extracting vectors/circuits which trigger neutralisation tendencies (Bang et al., 2024; “Bias Spillover
+      in Language Models,” 2025). We will then employ a latent variable model to decompose the generated text
       into said framing metrics, specifically tracking whether epistemic homogenisation interventions
       correlate with variance in quantitative fairness.
     </p>
@@ -85,14 +85,14 @@
       stifle mass-life-saving policy efforts on issues like global health, nuclear energy, and foreign
       aid. By quantifying exactly how and where alignment mechanisms create bias, this project lays
       the empirical groundwork to design safer alignment paradigms. Successfully mapping these
-      vulnerabilities will allow developers and policymakers to shift away from brittle "neutrality"
+      vulnerabilities will allow developers and policymakers to shift away from brittle “neutrality”
       targets toward frameworks that mathematically preserve representational fidelity, thereby
       mitigating the risk of a hegemonic, globally deployed algorithmic monoculture overwriting
       democratic discourse.
     </p>
 
     <p>
-      My primary uncertainty lies in the operationalization of "neutrality" and "bias," as these are
+      My primary uncertainty lies in the operationalisation of “neutrality” and “bias,” as these are
       inherently intersubjective — the importance of truth versus fidelity (is a factual summary better
       than a faithful one?) is an open question requiring analysis from several angles. There is also a
       risk that interpretability tools (LIME/SHAP) and the latent variable model might capture
@@ -109,18 +109,18 @@
 
     <p><strong>Works Cited</strong></p>
     <p>
-      Bang, Yejin, et al. (2024). "Measuring political bias in large language models: What is said
-      and how it is said." <em>Proceedings of the 62nd Annual Meeting of the Association for
+      Bang, Yejin, et al. (2024). “Measuring political bias in large language models: What is said
+      and how it is said.” <em>Proceedings of the 62nd Annual Meeting of the Association for
       Computational Linguistics.</em>
     </p>
     <p>
-      Savgira, P., et al. (2026). "What stays and what goes: Auditing the impact of LLM summarization
-      on news partisanship." <em>CHI: Late Breaking Work 2026.</em>
+      “Bias spillover in language models: A review of political alignment, regional fragility, and
+      multi-axis risks.” (2025). <em>Proceedings of the 2025 ACM Conference on Fairness,
+      Accountability, and Transparency.</em>
     </p>
     <p>
-      Smith, J., &amp; Doe, A. (2025). "Bias spillover in language models: A review of political
-      alignment, regional fragility, and multi-axis risks." <em>Proceedings of the 2025 ACM Conference
-      on Fairness, Accountability, and Transparency.</em>
+      Savgira, P., et al. (2026). “What stays and what goes: Auditing the impact of LLM summarization
+      on news partisanship.” <em>CHI: Late Breaking Work 2026.</em>
     </p>
   </div>
 </main>

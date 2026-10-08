@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MLP Bipedal Walker — Troy Hanfei Tian</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
 </head>
 <body>
 
 <a href="#aisf-application-main" class="skip-link">Skip to main content</a>
 <header class="site-header">
   <nav aria-label="Main navigation">
-    <a href="index.html">About</a>
-    <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
-    <a href="writing.html" class="active">Writing</a>
-    <a href="contact.html">Contact</a>
+    <a href="../index.html">About</a>
+    <a href="../resume.pdf" target="_blank" rel="noopener">Resume</a>
+    <a href="../writing.html" class="active">Writing</a>
+    <a href="../contact.html">Contact</a>
     <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">Dark Mode</button>
     <div class="social-links">
       <a href="https://www.linkedin.com/in/troy-tian" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
@@ -45,7 +45,7 @@
       src="aisf-bipedal-walker.pdf#navpanes=0&pagemode=none"
       class="pdf-embed"
       title="MLP Bipedal Walker PDF">
-      <p>Your browser doesn't support embedded PDFs.
+      <p>Your browser doesn’t support embedded PDFs.
         <a href="aisf-bipedal-walker.pdf">Download the PDF</a> instead.
       </p>
     </iframe>
@@ -56,7 +56,7 @@
     <p>
       Prior to this project, I had been a fellow for the fall technical track with AI Safety @ UCLA,
       where I was introduced to how RL works intuitively and mathematically and given sample exercises
-      to practice implementation. Beyond this, I had neither learned about nor coded any deep learning
+      to practise implementation. Beyond this, I had neither learned about nor coded any deep learning
       or other RL models.
     </p>
 
@@ -66,7 +66,7 @@
       2017), Stable-Baselines3 (Raffin et al., 2021), Generalized Advantage Estimation (Schulman et
       al., 2016), and the reward structure and observation/action spaces of BipedalWalker-v3. Hours
       4–6 covered ablation experiments; 7–8 focused on intensifying training timescales toward solving
-      the environment; 9–10 finalized conclusions and researched next steps.
+      the environment; 9–10 finalised conclusions and researched next steps.
     </p>
 
     <h2>Techniques &amp; Justifications</h2>
@@ -82,15 +82,15 @@
         convergence.
       </li>
       <li>
-        <strong>Entropy regularization:</strong> Entropy rewards uncertainty/stochasticity. Annealing
-        the regularization coefficient progressively over training created implicit entropy scheduling,
+        <strong>Entropy regularisation:</strong> Entropy rewards uncertainty/stochasticity. Annealing
+        the regularisation coefficient progressively over training created implicit entropy scheduling,
         assisting model transition from exploration to exploitation.
       </li>
       <li>
-        <strong>Advantage estimation tuning:</strong> GAE lambda governs advantage estimates' focus
+        <strong>Advantage estimation tuning:</strong> GAE lambda governs advantage estimates’ focus
         on longer-term reward information vs. shorter-term TD errors. Raising the GAE coefficient
         accelerated early learning but later created instability, requiring curriculum-style
-        optimization of the bias-variance tradeoff.
+        optimisation of the bias–variance tradeoff.
       </li>
       <li>
         <strong>Generalized State-Dependent Exploration (gSDE):</strong> Predicates sampled action
@@ -100,7 +100,7 @@
         to a local optimum.
       </li>
       <li>
-        <strong>Observation normalization:</strong> Stabilises training by rescaling observation
+        <strong>Observation normalisation:</strong> Stabilises training by rescaling observation
         dimensions to approximately zero mean and unit variance, improving conditioning.
       </li>
       <li>
@@ -109,7 +109,7 @@
         performance due to a tendency to accelerate convergence to local optima.
       </li>
       <li>
-        <strong>PPO stabilization:</strong> Tuning hyperparameters — action clipping via PPO
+        <strong>PPO stabilisation:</strong> Tuning hyperparameters — action clipping via PPO
         objective, target KL (early stopping), batch size, and epochs — ensured more stable policy
         refinement.
       </li>
@@ -133,30 +133,30 @@
     </p>
 
     <p>
-      Parallel environment sampling increased throughput but caused the model to optimize too
+      Parallel environment sampling increased throughput but caused the model to optimise too
       aggressively in late training, leading to brittleness as the policy drifted. I was too
       time-constrained to investigate fixes specifically, but it remains a promising direction.
     </p>
 
     <h2>Conclusions &amp; Next Steps</h2>
     <p>
-      Overall, I conclude that curriculum learning-style optimizations of tradeoffs between
+      Overall, I conclude that curriculum learning-style optimisations of tradeoffs between
       exploration/exploitation and advantage/reward are among the most crucial parts of training an
-      MLP for this environment. Observation normalization unequivocally improved training stability.
+      MLP for this environment. Observation normalisation unequivocally improved training stability.
       The effectiveness of gSDE seemed limited by the dominance of stability and reward-structure
       challenges rather than insufficient exploration noise; similarly, parallel environment sampling
       seemed ill-suited to the training of a stable model given the scope of this project.
     </p>
 
     <p>
-      Improvements with further investigation would include: correlating optimization epochs with
+      Improvements with further investigation would include: correlating optimisation epochs with
       rollouts and other training data; exploiting parallel data collection using off-policy
       algorithms with experience replay (Haarnoja et al., 2018; Fujimoto et al., 2018); or
       further tweaking KL-based trust-region constraints to preserve training stability.
     </p>
     <p><strong>Works Cited</strong></p>
     <p>Farama Foundation. (2023). <em>Gymnasium</em>. https://gymnasium.farama.org</p>
-    <p>Fujimoto, S., Hoof, H., and Meger, D. (2018). Addressing function approximation error in actor-critic methods. <em>Proceedings of the 35th International Conference on Machine Learning (ICML)</em>.</p>
+    <p>Fujimoto, S., van Hoof, H., and Meger, D. (2018). Addressing function approximation error in actor-critic methods. <em>Proceedings of the 35th International Conference on Machine Learning (ICML)</em>.</p>
     <p>Haarnoja, T., Zhou, A., Abbeel, P., and Levine, S. (2018). Soft actor-critic: off-policy maximum entropy deep reinforcement learning with a stochastic actor. <em>Proceedings of the 35th International Conference on Machine Learning (ICML)</em>.</p>
     <p>OpenAI. (2018). <em>Spinning up in deep reinforcement learning</em>. https://spinningup.openai.com</p>
     <p>Raffin, A., et al. (2021). Stable-Baselines3: reliable reinforcement learning implementations. <em>Journal of Machine Learning Research</em>, 22(268), 1–8.</p>
