@@ -338,7 +338,7 @@ h2.page-title {
 }
 
 /* ── Writing page ── */
-.writing-section { margin-bottom: 1.5rem; }
+.writing-section { margin-bottom: 3rem; }
 .writing-section:last-child { margin-bottom: 0; }
 
 .section-header {
