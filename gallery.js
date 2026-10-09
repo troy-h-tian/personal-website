@@ -5,7 +5,7 @@ const GALLERY = [
   {"src": "shanghai-2025-4", "place": "Shanghai", "year": "2025", "r": 1.3333},
   {"src": "fushimi-inari-taisha-2026-4", "place": "Fushimi Inari Taisha, Kyoto", "year": "2026", "r": 1.3333},
   {"src": "musee-de-orsay-2024", "place": "Musée d’Orsay, Paris", "year": "2024", "r": 1.3333},
-  {"src": "kyoto-2026-3", "place": "Kyoto", "year": "2026", "r": 0.75},
+  {"src": "kyoto-2026-3", "place": "Higashi Hongan-ji, Kyoto", "year": "2026", "r": 0.75},
   {"src": "kiyomizu-dera-2026", "place": "Kiyomizu-dera, Kyoto", "year": "2026", "r": 0.75},
   {"src": "xian-2025", "place": "Xi’an", "year": "2025", "r": 0.5687},
   {"src": "todai-ji-2026-4", "place": "Tōdai-ji, Nara", "year": "2026", "r": 1.3333},
