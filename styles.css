@@ -424,6 +424,12 @@ h2.page-title {
   max-width: 580px;
 }
 
+/* keep anchored essays clear of the sticky header */
+.essay-body[id] { scroll-margin-top: 6rem; }
+@media (max-width: 600px) {
+  .essay-body[id] { scroll-margin-top: 9rem; }
+}
+
 .essay-body h2 {
   font-size: 1.15rem;
   font-weight: normal;
