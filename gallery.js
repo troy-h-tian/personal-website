@@ -55,7 +55,7 @@ const GALLERY = [
   {"src": "london-2024-4", "place": "London", "year": "2024", "r": 1.3333},
   {"src": "chongqing-2025-3", "place": "Chongqing", "year": "2025", "r": 0.4953},
   {"src": "fushimi-inari-taisha-2026-5", "place": "Fushimi Inari Taisha, Kyoto", "year": "2026", "r": 0.75},
-  {"src": "osaka-2026-10", "place": "Osaka", "year": "2026", "r": 0.75},
+  {"src": "osaka-2026-10", "place": "Osaka", "year": "2026", "r": 0.7706},
   {"src": "chongqing-2025-4", "place": "Chongqing", "year": "2025", "r": 0.7422},
   {"src": "osaka-2026-6", "place": "Osaka", "year": "2026", "r": 1.3333},
   {"src": "kyoto-2026-2", "place": "Kyoto", "year": "2026", "r": 0.75},

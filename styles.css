@@ -620,12 +620,6 @@ h2.page-title {
 
 /* ── Gallery ── */
 .gallery-wrapper { padding-top: 0; }
-.gallery-desc {
-  font-size: 0.925rem;
-  color: var(--text);
-  opacity: 0.8;
-  margin-bottom: 1rem;
-}
 .gallery-mural {
   display: flex;
   flex-wrap: wrap;
